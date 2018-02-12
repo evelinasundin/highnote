@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "node-sass-chokidar": "0.0.3",
+    "query-string": "^5.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
     "react-scripts": "1.1.0"
   },
   "scripts": {
