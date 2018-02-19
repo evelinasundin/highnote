@@ -8,7 +8,7 @@
 
 h1 {
   font-family: 'futura_maxi_bold', sans-serif;
-  font-size: 90px;
+  font-size: 75px;
   letter-spacing: 2px;
   color: #af1f1f;
   margin: 0; }
@@ -36,7 +36,7 @@ p {
 
 .hero-text {
   position: absolute;
-  top: 35%;
+  top: 40%;
   transform: translateY(-50%);
   text-align: center;
   left: 50%;
@@ -61,11 +61,10 @@ p {
 
 .hero-text h1, .hero-text h2, h3 {
   font-family: 'futura_maxi_bold', sans-serif;
-  font-size: 90px;
+  font-size: 75px;
   letter-spacing: 2px;
   color: #fff;
-  margin: 0;
-  letter-spacing: 4px; }
+  margin: 0; }
 
 h3 {
   color: #000;
@@ -100,11 +99,24 @@ h3 {
   /* Opera */
   opacity: 0; }
 
+.red-button a {
+  color: #af1f1f;
+  border: 1.5px solid #af1f1f; }
+
+.red-button {
+  margin-bottom: 100px;
+  margin-top: 50px; }
+
 .button a:hover {
-  background-color: rgba(175, 31, 31, 0.7); }
+  background-color: rgba(175, 31, 31, 0.7);
+  border: none; }
+
+.red-button a:hover {
+  color: #fff;
+  background-color: #af1f1f; }
 
 .fp-text {
-  padding: 50px;
+  padding: 80px 50px;
   width: 75%;
   clear: both; }
 
@@ -156,3 +168,8 @@ h4 {
 
 .red {
   color: #af1f1f; }
+
+.button-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative; }

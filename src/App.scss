@@ -19,7 +19,7 @@ $dark-red-color: #892525;
 
 // font-sizes 
 $big-heading: 110px;
-$heading: 90px;
+$heading: 75px;
 $sub-heading: 70px;
 $regular-text: 20px;
 
@@ -58,7 +58,7 @@ p {
 
 .hero-text {
   position: absolute;
-  top: 35%; 
+  top: 40%; 
   transform: translateY(-50%); 
   text-align: center; 
   left: 50%;
@@ -85,7 +85,6 @@ p {
   letter-spacing: 2px;
   color: $white-color;
   margin: 0;
-  letter-spacing: 4px;
 }
 
 h3 {
@@ -122,12 +121,28 @@ h3 {
   opacity: 0;
 }
 
+.red-button a {
+  color: $red-color;
+  border: 1.5px solid $red-color; 
+}
+
+.red-button {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
 .button a:hover {
   background-color: rgba(175, 31, 31, 0.7);
+  border: none;
+}
+
+.red-button a:hover {
+  color: $white-color;
+  background-color: rgb(175, 31, 31);
 }
 
 .fp-text {
-  padding: 50px;
+  padding: 80px 50px;
   width: 75%;
   clear: both;
 }
@@ -188,4 +203,10 @@ h4 {
 
 .red {
   color: $red-color;
+}
+
+.button-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
 }
