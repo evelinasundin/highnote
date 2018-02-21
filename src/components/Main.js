@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
-import queryString from "query-string";
 import { Switch, Route } from "react-router";
 import Home from './Home'
 import RecentSongs from './RecentSongs'

@@ -1,18 +1,27 @@
-import React, { Component } from "react";
-import queryString from "query-string";
-import { Router, Route } from "react-router";
+import React from "react";
 
-class TopArtists extends Component {
+const TopArtists = props => {
+  const list =
+    props.topSongs.items &&
+    props.topSongs.items.slice(0, 5).map(function(item) {
+      return (
+          <div key={item.id}>
+      <p>{item.name}</p>
+      <img src={item.album.images[1].url} alt="album cover"/>
+      
+</div>
 
-    render() {
-        return (
-            <h1> Tjena! </h1>
+      )
+    });
 
-        ) 
+  console.log(props.topSongs);
 
-    }
-
-
-}
+  return (
+    <div>
+      <h2>These are your most listened to songs</h2>
+      {list}
+    </div>
+  );
+};
 
 export default TopArtists;
