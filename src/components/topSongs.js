@@ -3,18 +3,19 @@ import React from "react";
 const TopArtists = props => {
   const list =
     props.topSongs.items &&
-    props.topSongs.items.slice(0, 5).map(function(item) {
+    props.topSongs.items.slice(5, 10).map(function(item) {
       return (
-          <div key={item.id}>
-      <p>{item.name}</p>
-      <img src={item.album.images[1].url} alt="album cover"/>
-      
-</div>
-
-      )
+        <div key={item.id}>
+          <img src={item.album.images[1].url} alt="album cover" />
+          <b>
+            <p>{item.name}</p>
+          </b>
+          {item.artists.map(function(artist) {
+            return <p key={artist.id}>{artist.name}</p>;
+          })}
+        </div>
+      );
     });
-
-  console.log(props.topSongs);
 
   return (
     <div>

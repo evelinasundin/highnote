@@ -58,7 +58,7 @@ p {
 
 .hero-text {
   position: absolute;
-  top: 40%; 
+  top: 45%; 
   transform: translateY(-50%); 
   text-align: center; 
   left: 50%;
@@ -133,7 +133,6 @@ h3 {
 
 .button a:hover {
   background-color: rgba(175, 31, 31, 0.7);
-  border: none;
 }
 
 .red-button a:hover {
@@ -142,7 +141,7 @@ h3 {
 }
 
 .fp-text {
-  padding: 80px 50px;
+  padding: 50px;
   width: 75%;
   clear: both;
 }
