@@ -11,7 +11,8 @@ class PlaylistRenderer extends Component {
     user: {},
     timeRange: "",
     playlistName: "",
-    topSongs: {}
+    topSongs: {},
+    playlistID: ""
   };
 
   componentDidMount() {
@@ -64,12 +65,16 @@ class PlaylistRenderer extends Component {
       body: JSON.stringify({ name: "My Playlist", public: false })
     })
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data =>
+        this.setState({
+          playlistID: data.id
+        })
+      );
   };
 
-  addSongsToPlaylist = () => {
+  addSongsToPlaylist = (username, playlistID) => {
     fetch(
-      `https://api.spotify.com/v1/users/evesun/playlists/0aF5Qo2aNMZvnpVz7puNHi/tracks?uris=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M`,
+      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M`,
       {
         method: "POST",
         headers: {
@@ -83,6 +88,7 @@ class PlaylistRenderer extends Component {
 
   render() {
     console.log(this.state.topSongs);
+    console.log(this.state.playlistID)
 
     return (
       <div>
@@ -90,10 +96,13 @@ class PlaylistRenderer extends Component {
         <button onClick={() => this.createPlaylist(this.state.user.userID)}>
           Click me!
         </button>
-        <button onClick={() => this.addSongsToPlaylist()}>
+        <button onClick={() => this.addSongsToPlaylist(this.state.user.userID, this.state.playlistID)}>
           Click to add songs to playlist!
         </button>
         <p>hello</p>
+
+
+        {/* <form onSubmit={this.createPlaylist(this.state.user.userID)}>
         <input
           placeholder="enter your playlist name here"
           type="text"
@@ -126,6 +135,12 @@ class PlaylistRenderer extends Component {
           <option value="40">40</option>
           <option value="50">50</option>
         </select>
+        <input
+            type="submit"
+            value="Add Post"
+            className="btn btn-primary m-3"
+          />
+          </form> */}
       </div>
     );
   }
