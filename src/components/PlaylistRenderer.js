@@ -12,7 +12,8 @@ class PlaylistRenderer extends Component {
     timeRange: "",
     playlistName: "",
     topSongs: {},
-    playlistID: ""
+    playlistID: "",
+    topTracks: {}
   };
 
   componentDidMount() {
@@ -45,7 +46,11 @@ class PlaylistRenderer extends Component {
       .then(response => response.json())
       .then(data =>
         this.setState({
-          topSongs: data
+          topSongs: data.items.map(item => {
+            return {
+              artisturi: item.uri
+            }
+          })
         })
       );
   }
@@ -66,15 +71,13 @@ class PlaylistRenderer extends Component {
     })
       .then(response => response.json())
       .then(data =>
-        this.setState({
-          playlistID: data.id
-        })
+        this.addSongsToPlaylist(this.state.topSongs, this.state.user.userID, data.id)
       );
   };
 
-  addSongsToPlaylist = (username, playlistID) => {
+  addSongsToPlaylist = (topSongs, username, playlistID) => {
     fetch(
-      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=spotify:track:6fwdbPMwP1zVStm8FybmkO,spotify:track:6fwdbPMwP1zVStm8FybmkO`,
+      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=${topSongs.map(item => {return item.artisturi}).join(",")}`,
       {
         method: "POST",
         headers: {
@@ -87,15 +90,13 @@ class PlaylistRenderer extends Component {
   };
 
   render() {
+    console.log(this.state.topSongs);
 
     return (
       <div>
         <h1>Hi!</h1>
         <button onClick={() => this.createPlaylist(this.state.user.userID)}>
           Click me!
-        </button>
-        <button onClick={() => this.addSongsToPlaylist(this.state.user.userID, this.state.playlistID)}>
-          Click to add songs to playlist!
         </button>
         <p>hello</p>
 
