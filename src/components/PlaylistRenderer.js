@@ -54,7 +54,7 @@ class PlaylistRenderer extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  createPlaylist = username => {
+  createPlaylist = (username) => {
     fetch(`https://api.spotify.com/v1/users/${username}/playlists`, {
       method: "POST",
       headers: {
@@ -74,7 +74,7 @@ class PlaylistRenderer extends Component {
 
   addSongsToPlaylist = (username, playlistID) => {
     fetch(
-      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh,spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M`,
+      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=spotify:track:6fwdbPMwP1zVStm8FybmkO,spotify:track:6fwdbPMwP1zVStm8FybmkO`,
       {
         method: "POST",
         headers: {
@@ -87,8 +87,6 @@ class PlaylistRenderer extends Component {
   };
 
   render() {
-    console.log(this.state.topSongs);
-    console.log(this.state.playlistID)
 
     return (
       <div>
