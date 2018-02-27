@@ -3,13 +3,15 @@ import "../App.css";
 import queryString from "query-string";
 import TopArtists from "./TopArtists";
 import TopSongs from "./TopSongs";
-import PlaylistRenderer from "./PlaylistRenderer"
+import PlaylistRenderer from "./PlaylistRenderer";
+import RecentSongs from "./RecentSongs"
 
 class App extends Component {
   state = {
     user: {},
     topSongs: {},
-    topArtists: {}
+    topArtists: {},
+    recentlyPlayed: {}
   };
 
   componentDidMount() {
@@ -41,16 +43,27 @@ class App extends Component {
 
 
 
-    fetch("https://api.spotify.com/v1/me/top/artists?limit=35", {
+    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
       headers: { Authorization: "Bearer " + accessToken }
       // which returns a response as a promise
     })
       .then(response => response.json())
       .then(data =>
         this.setState({
-          topArtists: data
+          recentlyPlayed: data
         })
       );
+
+      fetch("https://api.spotify.com/v1/me/top/artists?limit=35", {
+        headers: { Authorization: "Bearer " + accessToken }
+        // which returns a response as a promise
+      })
+        .then(response => response.json())
+        .then(data =>
+          this.setState({
+            topArtists: data
+          })
+        );
 
     fetch(
       "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=50",
@@ -67,13 +80,16 @@ class App extends Component {
       );
   }
 
-  render() {
+  render() 
+  {
     console.log(this.state.topArtists);
+    console.log(this.state.recentlyPlayed);
     const name = this.state.user.name;
     const userID = this.state.user.userID;
     return (
       <div>
         <h1>Hi {name ? name : userID}!</h1>
+        <RecentSongs recentlyplayed={this.state.recentlyPlayed} />
         <TopArtists topArtists={this.state.topArtists} />
         <TopSongs topSongs={this.state.topSongs} />
         <PlaylistRenderer userID={this.props.userID}/>

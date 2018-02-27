@@ -36,8 +36,33 @@ class PlaylistRenderer extends Component {
         })
       );
 
-    fetch(
-      "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=50",
+    // fetch(
+    //   "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=50",
+    //   {
+    //     headers: { Authorization: "Bearer " + accessToken }
+    //     // which returns a response as a promise
+    //   }
+    // )
+    //   .then(response => response.json())
+    //   .then(data =>
+    //     this.setState({
+    //       topSongs: data.items.map(item => {
+    //         return {
+    //           artisturi: item.uri
+    //         }
+    //       })
+    //     }),
+    //     this.createPlaylist(this.state.user.userID)
+    //   );
+  }
+
+  onChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  addSongs = () => {
+        fetch(
+      "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=25",
       {
         headers: { Authorization: "Bearer " + accessToken }
         // which returns a response as a promise
@@ -51,15 +76,13 @@ class PlaylistRenderer extends Component {
               artisturi: item.uri
             }
           })
-        })
+        }),
+        this.createPlaylist(this.state.user.userID, this.state.topSongs)
       );
+
   }
 
-  onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  createPlaylist = (username) => {
+  createPlaylist = (username, topSongs) => {
     fetch(`https://api.spotify.com/v1/users/${username}/playlists`, {
       method: "POST",
       headers: {
@@ -95,7 +118,7 @@ class PlaylistRenderer extends Component {
     return (
       <div>
         <h1>Hi!</h1>
-        <button onClick={() => this.createPlaylist(this.state.user.userID)}>
+        <button onClick={() => this.addSongs()}>
           Click me!
         </button>
         <p>hello</p>
