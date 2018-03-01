@@ -9,11 +9,12 @@ let accessToken = parsedURL.access_token;
 class PlaylistRenderer extends Component {
   state = {
     user: {},
-    timeRange: "",
-    playlistName: "",
+    timeRange: "short_term",
+    playlistName: "My top tracks",
     topSongs: {},
     playlistID: "",
-    topTracks: {}
+    topTracks: {},
+    limit: "10",
   };
 
   componentDidMount() {
@@ -60,27 +61,26 @@ class PlaylistRenderer extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  addSongs = () => {
-        fetch(
-      "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=25",
+  addSongs = (event) => {
+    event.preventDefault();
+    fetch(
+      `https://api.spotify.com/v1/me/top/tracks?time_range=${this.state.timeRange}&&limit=${this.state.limit}`,
       {
         headers: { Authorization: "Bearer " + accessToken }
         // which returns a response as a promise
       }
     )
       .then(response => response.json())
-      .then(data =>
-        this.setState({
-          topSongs: data.items.map(item => {
-            return {
-              artisturi: item.uri
-            }
-          })
-        }),
-        this.createPlaylist(this.state.user.userID, this.state.topSongs)
-      );
-
-  }
+      .then((topSongsData) => {
+        let topSongs = topSongsData
+          .items.map(item => {
+              return {
+                artisturi: item.uri
+            };
+        })
+        this.createPlaylist(this.state.user.userID, topSongs)
+      });
+  };
 
   createPlaylist = (username, topSongs) => {
     fetch(`https://api.spotify.com/v1/users/${username}/playlists`, {
@@ -90,17 +90,25 @@ class PlaylistRenderer extends Component {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name: "My Playlist", public: false })
+      body: JSON.stringify({ name: this.state.playlistName, public: false })
     })
       .then(response => response.json())
-      .then(data =>
-        this.addSongsToPlaylist(this.state.topSongs, this.state.user.userID, data.id)
+      .then(playlist =>
+        this.addSongsToPlaylist(
+          topSongs,
+          this.state.user.userID,
+          playlist.id
+        )
       );
   };
 
   addSongsToPlaylist = (topSongs, username, playlistID) => {
     fetch(
-      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=${topSongs.map(item => {return item.artisturi}).join(",")}`,
+      `https://api.spotify.com/v1/users/${username}/playlists/${playlistID}/tracks?uris=${topSongs
+        .map(item => {
+          return item.artisturi;
+        })
+        .join(",")}`,
       {
         method: "POST",
         headers: {
@@ -118,13 +126,10 @@ class PlaylistRenderer extends Component {
     return (
       <div>
         <h1>Hi!</h1>
-        <button onClick={() => this.addSongs()}>
-          Click me!
-        </button>
+        <button onClick={() => this.addSongs()}>Click me!</button>
         <p>hello</p>
 
-
-        {/* <form onSubmit={this.createPlaylist(this.state.user.userID)}>
+        <form onSubmit={this.addSongs}>
         <input
           placeholder="enter your playlist name here"
           type="text"
@@ -162,7 +167,7 @@ class PlaylistRenderer extends Component {
             value="Add Post"
             className="btn btn-primary m-3"
           />
-          </form> */}
+          </form>
       </div>
     );
   }

@@ -88,11 +88,11 @@ class App extends Component {
     const userID = this.state.user.userID;
     return (
       <div>
-        <h1>Hi {name ? name : userID}!</h1>
-        <RecentSongs recentlyplayed={this.state.recentlyPlayed} />
+        {/* <h1>Hi {name ? name : userID}!</h1> */}
+        <RecentSongs recentSongs={this.state.recentlyPlayed} user={this.state.user}/>
         <TopArtists topArtists={this.state.topArtists} />
         <TopSongs topSongs={this.state.topSongs} />
-        <PlaylistRenderer userID={this.props.userID}/>
+        <PlaylistRenderer userID={this.state.userID}/>
       </div>
     );
   }

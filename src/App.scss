@@ -34,6 +34,7 @@ h1 {
 p {
   font-family: 'futura_maxi_book';
   font-size: $regular-text;
+  margin: 0
 }
 
 .logo img {
@@ -141,7 +142,7 @@ h3 {
 }
 
 .fp-text {
-  padding: 50px;
+  padding: 70px 50px;
   width: 75%;
   clear: both;
 }
@@ -208,4 +209,67 @@ h4 {
   padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
+}
+
+footer {
+  height: 200px;
+  background-color: $dark-red-color;
+}
+
+// RECENT SONGS 
+
+.recentSongsContainer {
+  // background: linear-gradient(1deg, #000 0%, #333 100%);
+  height: 100vh;
+  width: 100%;
+  min-height: 800px;
+  background-color: #000;
+}
+
+.white-text {
+  color: $white-color;
+  margin: 0;
+}
+
+.recent-left, .recent-right {
+  display:inline-block;
+  width: 50%;
+  margin: 0;
+  position:relative;
+}
+
+.recent-container {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.inline-block {
+  display:inline-block;
+}
+
+.recent-container img {
+  height: 110px;
+  margin-right: 20px;
+}
+
+.recent-row {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 82px;
+
+}
+.recent-right {
+  position: absolute;
+  top: 30%;
+}
+
+.recent-song-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.artistname {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }

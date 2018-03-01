@@ -25,4 +25,8 @@ const TopArtists = props => {
   );
 };
 
+TopArtists.defaultProps = {
+  topSongs: []
+}
+
 export default TopArtists;

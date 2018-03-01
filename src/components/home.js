@@ -75,6 +75,8 @@ class App extends Component {
             </a>
           </div>
           </div>
+          <footer> 
+          </footer>
 
 
         </div> {/* last div */}
