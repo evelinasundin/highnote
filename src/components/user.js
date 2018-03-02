@@ -54,7 +54,7 @@ class App extends Component {
         })
       );
 
-      fetch("https://api.spotify.com/v1/me/top/artists?limit=35", {
+      fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&&limit=50", {
         headers: { Authorization: "Bearer " + accessToken }
         // which returns a response as a promise
       })
@@ -84,15 +84,14 @@ class App extends Component {
   {
     console.log(this.state.topArtists);
     console.log(this.state.recentlyPlayed);
-    const name = this.state.user.name;
-    const userID = this.state.user.userID;
+  
     return (
       <div>
         {/* <h1>Hi {name ? name : userID}!</h1> */}
         <RecentSongs recentSongs={this.state.recentlyPlayed} user={this.state.user}/>
         <TopArtists topArtists={this.state.topArtists} />
         <TopSongs topSongs={this.state.topSongs} />
-        <PlaylistRenderer userID={this.state.userID}/>
+        {/* <PlaylistRenderer userID={this.state.userID}/> */}
       </div>
     );
   }

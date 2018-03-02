@@ -20,8 +20,8 @@ class App extends Component {
             <img src={heropic} alt="hero-pic"/>
           </div>
           <div className="hero-text">
-            <h1>high note</h1>
-            <h2>ur track keeper.</h2>
+            <h1 className="animate-top">high note</h1>
+            <h2 className="animate-bottom">ur track keeper.</h2>
           </div>
           <div className="button">
             <a

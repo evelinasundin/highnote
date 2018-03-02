@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import white_logo from "../img/highnote_white.png";
 // import $ from 'jquery';
 // import { findDOMNode } from 'react-dom';
@@ -9,7 +9,7 @@ const recentSongs = props => {
     props.recentSongs.items.slice(0, 4).map(function(item) {
       console.log(item);
       return (
-        <div id="lala" className="recent-container" key={item.id}>
+        <div id="lala" className="recent-container animate-top" key={item.played_at}>
           <div className="inline-block">
             <img src={item.track.album.images[1].url} alt="album cover" />
           </div>
@@ -22,7 +22,8 @@ const recentSongs = props => {
                   className="white-text inline-block artistname"
                   key={artist.id}
                 >
-                  {artist.name} {i !== item.track.artists.length -1 ? ' , ': ''}
+                {/* takes last index in array and addes a comma and space*/}
+                  {artist.name} {i !== item.track.artists.length -1? ',\xa0': ''}
                 </p>
               );
             })}
@@ -34,8 +35,8 @@ const recentSongs = props => {
 
   return (
     <div className="recentSongsContainer">
-      <div class="logo recentsongs">
-        <img src={white_logo} />
+      <div className="logo recentsongs">
+        <img src={white_logo} alt="logo-white"/>
       </div>
       <div className="recent-row">
         <div className="recent-left">
@@ -43,12 +44,12 @@ const recentSongs = props => {
         </div>
 
         <div className="recent-right">
-          <p className="white-text">
+          <p className="white-text animate-top">
             {" "}
             Hi {props.user.name ? props.user.name : props.user.userID}, here
             presents
           </p>
-          <h1 className="white-text">your recently played tracks</h1>
+          <h1 className="white-text animate-bottom">your recently played tracks</h1>
         </div>
       </div>
     </div>

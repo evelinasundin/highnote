@@ -1,6 +1,6 @@
 import React from "react";
 
-const TopArtists = props => {
+const TopSongs = props => {
   const list =
     props.topSongs.items &&
     props.topSongs.items.slice(5, 10).map(function(item) {
@@ -25,8 +25,5 @@ const TopArtists = props => {
   );
 };
 
-TopArtists.defaultProps = {
-  topSongs: []
-}
 
-export default TopArtists;
+export default TopSongs;
