@@ -156,6 +156,19 @@ footer {
   height: 200px;
   background-color: #892525; }
 
+.fa-user {
+  color: white;
+  float: right;
+  font-size: 24px !important;
+  margin-top: 30px;
+  margin-right: 15px; }
+
+.user {
+  float: right;
+  padding-right: 38px;
+  padding-top: 35px;
+  font-size: 17px; }
+
 .recentSongsContainer {
   height: 100vh;
   width: 100%;
@@ -284,11 +297,11 @@ footer {
 
 .animate-top {
   position: relative;
-  animation: animatetop 0.6s; }
+  animation: animatetop 1.2s; }
 
 .animate-bottom {
   position: relative;
-  animation: animatebottom 0.6s; }
+  animation: animatebottom 1.2s; }
 
 @keyframes animatetop {
   from {
@@ -305,3 +318,7 @@ footer {
   to {
     bottom: 0;
     opacity: 1; } }
+
+.topsong-container {
+  background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
+  padding: 100px 100px; }

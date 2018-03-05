@@ -91,7 +91,7 @@ class App extends Component {
         <RecentSongs recentSongs={this.state.recentlyPlayed} user={this.state.user}/>
         <TopArtists topArtists={this.state.topArtists} />
         <TopSongs topSongs={this.state.topSongs} />
-        {/* <PlaylistRenderer userID={this.state.userID}/> */}
+        <PlaylistRenderer userID={this.state.userID}/>
       </div>
     );
   }

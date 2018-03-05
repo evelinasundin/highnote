@@ -1,5 +1,6 @@
 import React from "react";
 import white_logo from "../img/highnote_white.png";
+import 'font-awesome/css/font-awesome.min.css';
 // import $ from 'jquery';
 // import { findDOMNode } from 'react-dom';
 
@@ -36,7 +37,8 @@ const recentSongs = props => {
   return (
     <div className="recentSongsContainer">
       <div className="logo recentsongs">
-        <img src={white_logo} alt="logo-white"/>
+        <img src={white_logo} alt="logo-white" className="inline-block"/>
+    <p className="user inline-block white-text"> {props.user.name ? props.user.name : props.user.userID}</p><i className="fa fa-user"></i>
       </div>
       <div className="recent-row">
         <div className="recent-left">
@@ -49,7 +51,7 @@ const recentSongs = props => {
             Hi {props.user.name ? props.user.name : props.user.userID}, here
             presents
           </p>
-          <h1 className="white-text animate-bottom">your recently played tracks</h1>
+          <h1 className="white-text animate-bottom">your recently played tracks.</h1>
         </div>
       </div>
     </div>
