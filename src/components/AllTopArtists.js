@@ -1,26 +1,14 @@
 import React, { Component } from "react";
 import "../App.css";
 import queryString from "query-string";
-import TopArtists from "./TopArtists";
-import TopSongs from "./TopSongs";
-import PlaylistRenderer from "./PlaylistRenderer";
-import RecentSongs from "./RecentSongs";
-import AllTopSongs from "./AllTopSongs";
 
-class App extends Component {
-  state = {
-    user: {},
-    topSongs: {},
-    topArtists: {},
-    recentlyPlayed: {}
-  };
+
+class AllTopArtists extends Component {
 
   componentDidMount() {
     // extracts the querystring from url returns object
     let parsedURL = queryString.parse(window.location.search);
     let accessToken = parsedURL.access_token;
-
-
 
     // returns a promise
     fetch("https://api.spotify.com/v1/me", {
@@ -76,21 +64,12 @@ class App extends Component {
 
   render() 
   {
-    // console.log(this.state.topArtists);
-    // console.log(this.state.recentlyPlayed);
-    <AllTopSongs topSongs={this.state.topSongs} />  
-
     return (
       <div>
-        {/* <h1>Hi {name ? name : userID}!</h1> */}
-        <RecentSongs recentSongs={this.state.recentlyPlayed} user={this.state.user}/>
-        <TopArtists topArtists={this.state.topArtists} />
-        <TopSongs topSongs={this.state.topSongs} />
-        <PlaylistRenderer userID={this.state.userID}/>
-        <AllTopSongs topSongs={this.state.topSongs}/>  
+          <h1> hej </h1>
       </div>
     );
   }
 }
 
-export default App;
+export default AllTopArtists;

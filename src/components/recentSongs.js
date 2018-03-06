@@ -8,7 +8,7 @@ const recentSongs = props => {
   const recentlyPlayed =
     props.recentSongs.items &&
     props.recentSongs.items.slice(0, 4).map(function(item) {
-      console.log(item);
+    //   console.log(item);
       return (
         <div id="lala" className="recent-container animate-top" key={item.played_at}>
           <div className="inline-block">
@@ -54,6 +54,7 @@ const recentSongs = props => {
           <h1 className="white-text animate-bottom">your recently played tracks.</h1>
         </div>
       </div>
+      <p className="btn-scroll arrow-container"><i className="fa fa-angle-down white-text"></i></p>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-// colors 
+// colors
 $white-color: #fff;
 $black-color: #000;
 $red-color: #af1f1f;
@@ -16,15 +16,14 @@ $dark-red-color: #892525;
   src: url(fonts/futura_maxi_book.otf);
 }
 
-
-// font-sizes 
+// font-sizes
 $big-heading: 110px;
 $heading: 75px;
 $sub-heading: 70px;
 $regular-text: 20px;
 
 h1 {
-  font-family: 'futura_maxi_bold', sans-serif;
+  font-family: "futura_maxi_bold", sans-serif;
   font-size: $heading;
   letter-spacing: 2px;
   color: $red-color;
@@ -32,10 +31,12 @@ h1 {
 }
 
 p {
-  font-family: 'futura_maxi_book';
+  font-family: "futura_maxi_book", sans-serif;
   font-size: $regular-text;
-  margin: 0
+  margin: 0;
+  line-height: 24px;
 }
+
 
 .logo img {
   width: 60px;
@@ -59,9 +60,9 @@ p {
 
 .hero-text {
   position: absolute;
-  top: 45%; 
-  transform: translateY(-50%); 
-  text-align: center; 
+  top: 45%;
+  transform: translateY(-50%);
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
@@ -80,8 +81,10 @@ p {
 //   to   { opacity: 1; }
 // }
 
-.hero-text h1, .hero-text h2, h3 {
-  font-family: 'futura_maxi_bold', sans-serif;
+.hero-text h1,
+.hero-text h2,
+h3 {
+  font-family: "futura_maxi_bold", sans-serif;
   font-size: $heading;
   letter-spacing: 2px;
   color: $white-color;
@@ -95,26 +98,26 @@ h3 {
 }
 
 .hero-text h2 {
-  margin-top: 30px
+  margin-top: 30px;
 }
 
 .button {
   position: absolute;
   bottom: 20%;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
 }
 
 .button a {
-  border: 1.5px solid $white-color; 
+  border: 1.5px solid $white-color;
   padding: 28px 34px;
   border-radius: 40px;
-  font-family: 'futura_maxi_book'; 
+  font-family: "futura_maxi_book";
   font-size: 14px;
   letter-spacing: 1.5px;
   color: $white-color;
   cursor: pointer;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
   // animation: fadein 6s forwards;
   // -moz-animation: fadein 6s forwards; /* Firefox */
   // -webkit-animation: fadein 6s forwards; /* Safari and Chrome */
@@ -124,7 +127,7 @@ h3 {
 
 .red-button a {
   color: $red-color;
-  border: 1.5px solid $red-color; 
+  border: 1.5px solid $red-color;
 }
 
 .red-button {
@@ -162,30 +165,32 @@ h3 {
 }
 
 .opacity:before {
-  content: '';
+  content: "";
   height: 100%;
-  width: 100%; 
-  position: absolute; 
-  background-color: $black-color; 
+  width: 100%;
+  position: absolute;
+  background-color: $black-color;
   opacity: 0.3;
   z-index: 1;
   top: 0;
   left: 0;
 }
 
-.img-holder-left, .img-holder-right {
+.img-holder-left,
+.img-holder-right {
   display: inline-block;
-  width: 50%; 
+  width: 50%;
   margin: 0;
 }
 
-
-.img-holder-right img, .img-holder-left img {
+.img-holder-right img,
+.img-holder-left img {
   width: 100%;
   height: 550px;
 }
 
-.img-holder-right, .img-holder-left {
+.img-holder-right,
+.img-holder-left {
   position: relative;
   max-height: 550px;
 }
@@ -217,7 +222,7 @@ footer {
   background-color: $dark-red-color;
 }
 
-// RECENT SONGS 
+// RECENT SONGS
 
 .fa-user {
   color: white;
@@ -234,6 +239,13 @@ footer {
   font-size: 17px;
 }
 
+.arrow-container {
+  text-align: center;
+}
+
+i.fa.fa-angle-down.white-text {
+  font-size: 40px;
+}
 .recentSongsContainer {
   // background: linear-gradient(1deg, #000 0%, #333 100%);
   height: 100vh;
@@ -247,11 +259,12 @@ footer {
   margin: 0;
 }
 
-.recent-left, .recent-right {
-  display:inline-block;
+.recent-left,
+.recent-right {
+  display: inline-block;
   width: 50%;
   margin: 0;
-  position:relative;
+  position: relative;
 }
 
 .recent-container {
@@ -260,7 +273,7 @@ footer {
 }
 
 .inline-block {
-  display:inline-block;
+  display: inline-block;
 }
 
 .recent-container img {
@@ -272,7 +285,6 @@ footer {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 82px;
-
 }
 .recent-right {
   position: absolute;
@@ -291,7 +303,7 @@ footer {
   padding-bottom: 5px;
 }
 
-// Top artists 
+// Top artists
 
 .artist-container-row {
   display: inline-block;
@@ -305,7 +317,6 @@ footer {
   margin-right: 70px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 350px;
-
 }
 
 .artist-img-container-big:last-child {
@@ -324,31 +335,31 @@ footer {
 }
 
 .artist-text-big {
-  position: absolute; 
+  position: absolute;
   color: $white-color;
   bottom: 20px;
   z-index: 1337;
   margin-left: 25px;
-  font-family: 'futura_maxi_bold', sans-serif;
+  font-family: "futura_maxi_bold", sans-serif;
 }
 
 .artist-container {
-  background: linear-gradient(90deg, #FF8F7A 0%, #FD4928 100%);
+  background: linear-gradient(90deg, #ff8f7a 0%, #fd4928 100%);
   padding: 100px 100px;
 }
 
 .artist-heading-container h2 {
-  font-family: 'futura_maxi_bold', sans-serif;
+  font-family: "futura_maxi_bold", sans-serif;
   font-size: $sub-heading;
   letter-spacing: 3px;
 }
 
 .artist-heading-container {
   margin-bottom: 100px;
-
 }
 
-.other-popular-artists-container, {
+.other-popular-artists-container,
+  {
   display: inline-block;
   width: 50%;
 }
@@ -357,13 +368,13 @@ footer {
   margin-top: 110px;
 }
 
-.least-popular-artists-container{
+.least-popular-artists-container {
   display: inline-block;
   width: 50%;
 }
 
 .artist-small-background {
-  width: 397px;
+  width: 475px;
   height: 110px;
   background-color: rgba(137, 37, 37, 0.5);
   margin: 0 auto;
@@ -378,7 +389,11 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 41%;
+  left: 35%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 310px;
 }
 
 .artist-img {
@@ -396,33 +411,222 @@ footer {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
-.animate-top{
-  position:relative;
-  animation:animatetop 1.2s;
-}
-
-.animate-bottom {
-  position:relative;
-  animation:animatebottom 1.2s;
-}
-
 @keyframes animatetop {
-  from { top: -300px; opacity: 0; }
-  to   { top: 0; opacity: 1 }
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes animatebottom {
-  from { bottom: -300px; opacity: 0; }
-  to   { bottom: 0; opacity: 1 }
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
+@keyframes btnscroll {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-top {
+  position: relative;
+  animation: animatetop 1.2s;
+}
+
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 1.2s;
+}
+
+.btn-scroll {
+  position: relative;
+  animation: btnscroll ease 2.5s infinite;
+}
+
+.artist-img-container:hover:before {
+  content: "";
+  height: 100%;
+  width: 101%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0.6;
+  background-color: #000;
+}
+
+.fa-play-circle {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* transform: translateY(-50%); */
+}
+
+i.fa.fa-play-circle {
+  display: none;
+}
+
+.artist-img-container:before {
+  + i.fa.fa-play-circle {
+    display: block;
+  }
+}
 
 // TOP SONGS
 
 .topsong-container {
-
   background: linear-gradient(90deg, $red-color 0%, $dark-red-color 100%);
   padding: 100px 100px;
+}
 
+.songs-small-background {
+  width: 475px;
+  height: 110px;
+  background-color: rgba(56, 9, 9, 0.5);
+  margin: 0 auto;
+}
+
+// PLAYLIST RENDERER
+
+.playlistrender-container {
+  background: linear-gradient(90deg, $white-color 0%, #dbdbdb 100%);
+  padding: 100px 100px;
+}
+
+.playlistrender-heading-container h2 {
+  color: $dark-red-color;
+  font-family: "futura_maxi_bold", sans-serif;
+  font-size: $sub-heading;
+  letter-spacing: 3px;
+  margin-top: 0;
+  margin-bottom: 50px;
+  width: 890px;
+}
+
+.playlistrenderer-info-container {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.playlistrenderer-info-box {
+  display: inline-block;
+  margin-right: 45px;
+  max-width: 350px;
+
+}
+
+.playlist-symbol {
+  margin-bottom: 15px;
+}
+
+.playlistrenderer-info-box p {
+  font-size: 12px;
+
+}
+
+
+.playlistrenderer-info-box h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+
+.playlist-name-input {
+  width: 700px;
+  margin-right: 25px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+}
+
+.playlist-name-input:focus {
+border: none;
+border-bottom: 2px solid black;
+outline: none;
+
+}
+
+.playlist-creator-heading {
+  font-size: 12px;
+  margin-bottom: 20px;
+
+}
+
+.time-selector  {
+  background-color: transparent;
+  border: none;
+}
+
+.limit-selector  {
+  background-color: transparent;
+  border: none;
+}
+
+.playlist-submit-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 13px 33px;
+  margin-left: 25px;
+  background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
+  color: white;
+  transition: .2s all ease-in-out;
+  cursor: pointer;
+}
+
+.playlist-submit-btn:hover {
+  background: linear-gradient(90deg, #870f0f  0%, #620606 100%);
+
+}
+
+.submit-playlist {
+  text-align: center;
+}
+
+
+
+//ALL SONGS
+
+.allsongs-li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.allsongs-artist {
+  margin-right: 0px;
+}
+
+.allsongs-album {
+  margin-left: 20px;
+}
+
+.allsongs-li {
+  color: $white-color;
+  font-family: "futura_maxi_book";
+  font-size: 14px;
 }
 

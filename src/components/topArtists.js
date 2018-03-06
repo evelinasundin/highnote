@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const TopArtists = props => {
   const mostPopularArtists =
@@ -25,13 +26,16 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
+          <a target="_blank" href={item.external_urls.spotify}>
           <div className="artist-img-container">
             <img
               src={item.images[1].url}
               alt="album cover"
               className="artist-img"
             />
+            <i className="fa fa-play-circle"></i>
             </div>
+            </a>
           </div>
           <div className="other-popular-text">
           <p className="white-text">
@@ -49,6 +53,7 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
+          <a target="_blank" href={item.external_urls.spotify}>
           <div className="artist-img-container">
             <img
               src={item.images[1].url}
@@ -56,6 +61,7 @@ const TopArtists = props => {
               className="artist-img"
             />
             </div>
+            </a>
           </div>
           <div className="other-popular-text">
           <p className="white-text">
@@ -82,23 +88,9 @@ const TopArtists = props => {
           {leastPopularArtists}
         </div>
       </div>
+      {/* <p><Link to='/topartists'>Home</Link></p> */}
     </div>
   );
 };
-
-// console.log(props.topArtists)
-
-// return (
-//     <div>
-//         <h2>These are your most listened to artists: </h2>
-//     <ul>
-//     {
-//         props.topArtists.items && props.topArtists.items.slice(0, 10).map(function(item){
-//             return <li key={item.id}>{item.name}</li>
-//     })
-//     }
-//     </ul>
-//     </div>
-// )
 
 export default TopArtists;
