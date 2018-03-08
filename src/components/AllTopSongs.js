@@ -4,6 +4,7 @@ import queryString from "query-string";
 import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
 import white_logo from "../img/highnote_white.png";
+import PlaylistRenderer from "./PlaylistRenderer";
 
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
@@ -16,6 +17,9 @@ class AllTopSongs extends Component {
   };
 
   componentDidMount() {
+    // to start from beginning of page
+    window.scrollTo(0, 0);
+
     // extracts the querystring from url returns object
     let parsedURL = queryString.parse(window.location.search);
     let accessToken = parsedURL.access_token;
@@ -63,41 +67,42 @@ class AllTopSongs extends Component {
       this.state.topSongs.items &&
       this.state.topSongs.items.map(function(item, i) {
         return (
-          <ul key={i} className="alltop-ul">
-              <div className="allsongs-li-container">
-            <li className="allsongs-li">{i + 1 + "."}</li>
-            <li className="allsongs-li">
-              <div className="alltop-img-cover-container">
-                <img
-                  src={item.album.images[1].url}
-                  alt="album cover"
-                  className="alltop-img-cover"
-                />
-              </div>{" "}
-            </li>
+          <ul key={i} className="alltop-ul animate-top">
+            <div className="allsongs-li-container">
+              <li className="allsongs-li">{i + 1 + "."}</li>
+              <li className="allsongs-li">
+                <div className="alltop-img-cover-container">
+                  <img
+                    src={item.album.images[1].url}
+                    alt="album cover"
+                    className="alltop-img-cover"
+                  />
+                </div>{" "}
+              </li>
 
-            <li className="allsongs-li">{item.name}</li>
-            {item.artists.map(function(artist, i) {
-              return (
-                <li
-                  className="inline-block allsongs-li allsongs-artist"
-                  key={artist.id}
-                >
-                  {artist.name}
-                  {i !== item.artists.length - 1 ? ",\xa0" : ""}
-                </li>
-              );
-            })}
-{/* 
+              <li className="allsongs-li">{item.name}</li>
+              <li className="bind allsongs-li"> - </li>
+              {item.artists.map(function(artist, i) {
+                return (
+                  <li
+                    className="inline-block allsongs-li allsongs-artist"
+                    key={artist.id}
+                  >
+                    {artist.name}
+                    {i !== item.artists.length - 1 ? ",\xa0" : ""}
+                  </li>
+                );
+              })}
+              {/* 
             <li key={item.id} className="allsongs-li allsongs-album">
               {item.album.name}
             </li> */}
 
-            <li className="allsongs-li">
-              <a target="_blank" href={item.external_urls.spotify}>
-                <i className="fa fa-play-circle-o play-btn" />
-              </a>
-            </li>
+              <li className="allsongs-li">
+                <a target="_blank" href={item.external_urls.spotify}>
+                  <i className="fa fa-play-circle-o play-btn" />
+                </a>
+              </li>
             </div>
           </ul>
         );
@@ -105,26 +110,35 @@ class AllTopSongs extends Component {
 
     return (
       <div className="alltopsongs-container">
-           <div className="logo recentsongs">
-        <img src={white_logo} alt="logo-white" className="inline-block"/>
-    <p className="user inline-block white-text"> {this.state.user.name ? this.state.user.name : this.state.user.userID}</p><i className="fa fa-user"></i>
-      </div>
-          <div className="alltopsongs-select-container">
-          <select
-            name="timeRange"
-            placeholder="Select your period of time"
-            className="inline-block"
-            value={this.state.timeRange}
-            onChange={this.onChange}
-            required
-          >
-            <option value="short_term">Last month</option>
-            <option value="medium_term">Half year</option>
-            <option value="long_term">All time</option>
-          </select>
+        <div className="alltopsongs-list-container">
+          <div className="logo recentsongs">
+            <img src={white_logo} alt="logo-white" className="inline-block" />
+            <p className="user inline-block white-text">
+              {" "}
+              {this.state.user.name
+                ? this.state.user.name
+                : this.state.user.userID}
+            </p>
+            <i className="fa fa-user" />
           </div>
-          <div className="alltopsongs-list-container">
-        {songName}
+          <div className="alltop-playlistrender-container">
+            <PlaylistRenderer />
+          </div>
+          <div className="timerange-select-container">
+            <select
+              name="timeRange"
+              placeholder="Select your period of time"
+              className="inline-block"
+              value={this.state.timeRange}
+              onChange={this.onChange}
+              required
+            >
+              <option value="short_term">Last month</option>
+              <option value="medium_term">Half year</option>
+              <option value="long_term">All time</option>
+            </select>
+          </div>
+          {songName}
         </div>
       </div>
     );

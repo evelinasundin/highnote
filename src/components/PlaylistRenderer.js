@@ -115,12 +115,12 @@ class PlaylistRenderer extends Component {
     const { open } = this.state;
 
     return (
-      <div>
-        <div className="playlistrender-container">
+      <div className="playlist-creator-container">
+        {/* <div className="playlistrender-container"> */}
           {/* <div className="playlistrender-heading-container">
             <h2>playlist creator.</h2>
           </div> */}
-          <div className="playlistrenderer-info-container">
+          {/* <div className="playlistrenderer-info-container">
             <div className="playlistrenderer-info-box">
               <i className="fa fa-pencil playlist-symbol" />
               <h3>name your playlist</h3>
@@ -150,7 +150,7 @@ class PlaylistRenderer extends Component {
                 of your highest notes.
               </p>
             </div>
-          </div>
+          </div> */}
 
 
           {/* <div className="playlistrender-heading-container">
@@ -209,9 +209,8 @@ class PlaylistRenderer extends Component {
                 onClick={this.onOpenModal}
               />
             </div>
-          </form>
-        </div>
-        <div>
+
+            <div>
           <Modal open={open} onClose={this.onCloseModal} little>
             <div className="modal-container">
               <h2 className="modal-heading">Congrats!</h2>
@@ -228,6 +227,15 @@ class PlaylistRenderer extends Component {
             </div>
           </Modal>
         </div>
+          </form>
+
+
+
+
+        {/* </div> */}
+
+
+
       </div>
     );
   }

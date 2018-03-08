@@ -20,8 +20,6 @@ class App extends Component {
     let parsedURL = queryString.parse(window.location.search);
     let accessToken = parsedURL.access_token;
 
-
-
     // returns a promise
     fetch("https://api.spotify.com/v1/me", {
       headers: { Authorization: "Bearer " + accessToken }
@@ -48,16 +46,19 @@ class App extends Component {
         })
       );
 
-      fetch("https://api.spotify.com/v1/me/top/artists?time_range=long_term&&limit=50", {
+    fetch(
+      "https://api.spotify.com/v1/me/top/artists?time_range=long_term&&limit=50",
+      {
         headers: { Authorization: "Bearer " + accessToken }
         // which returns a response as a promise
-      })
-        .then(response => response.json())
-        .then(data =>
-          this.setState({
-            topArtists: data
-          })
-        );
+      }
+    )
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          topArtists: data
+        })
+      );
 
     fetch(
       "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&&limit=50",
@@ -74,20 +75,58 @@ class App extends Component {
       );
   }
 
-  render() 
-  {
+  render() {
     // console.log(this.state.topArtists);
     // console.log(this.state.recentlyPlayed);
-    <AllTopSongs topSongs={this.state.topSongs} />  
+    <AllTopSongs topSongs={this.state.topSongs} />;
 
     return (
       <div>
         {/* <h1>Hi {name ? name : userID}!</h1> */}
-        <RecentSongs recentSongs={this.state.recentlyPlayed} user={this.state.user}/>
+        <RecentSongs
+          recentSongs={this.state.recentlyPlayed}
+          user={this.state.user}
+        />
         <TopArtists topArtists={this.state.topArtists} />
         <TopSongs topSongs={this.state.topSongs} />
-        <PlaylistRenderer userID={this.state.userID}/>
-        <AllTopSongs topSongs={this.state.topSongs}/>  
+
+        <div className="playlistrender-container">
+          {/* <div className="playlistrender-heading-container">
+          <h2>playlist creator.</h2>
+        </div> */}
+          <div className="playlistrenderer-info-container">
+            <div className="playlistrenderer-info-box">
+              <i className="fa fa-pencil playlist-symbol" />
+              <h3>name your playlist</h3>
+              <p>
+                name your playlist to what you want. preferably something so you
+                remeber what your playlist contains. for example - "top tracks
+                of june 2018", or "my all time tracks".
+              </p>
+            </div>
+            <div className="playlistrenderer-info-box">
+              <i className="fa fa-clock-o playlist-symbol" />
+              <h3>choose your time range</h3>
+              <p>
+                choose the period of time you want the playlist to collect your
+                top songs from. you have three options, all time which gathers
+                your most listened to music. period. or you can choose half year
+                or the last month.
+              </p>
+            </div>
+            <div className="playlistrenderer-info-box">
+              <i className="fa fa-list-ol playlist-symbol" />
+              <h3>choose number of songs</h3>
+              <p>
+                choose the size of your playlist by deciding how many songs you
+                want your playlist to contain. you can choose from the minimum
+                quantity of 10 songs to max that will fill your playlist with 50
+                of your highest notes.
+              </p>
+            </div>
+            <PlaylistRenderer userID={this.state.userID} />
+          </div>
+        </div>
       </div>
     );
   }

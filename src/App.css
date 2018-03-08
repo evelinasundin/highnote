@@ -162,9 +162,6 @@ footer {
   height: 200px;
   background-color: #892525; }
 
-.recentsongs {
-  background-color: #000; }
-
 .fa-user {
   color: white;
   float: right;
@@ -426,7 +423,7 @@ i.fa.fa-play-circle {
   margin-bottom: 15px; }
 
 .playlist-name-input {
-  width: 700px;
+  width: 650px;
   margin-right: 25px;
   border: none;
   background-color: transparent;
@@ -588,7 +585,8 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
   opacity: 1; }
 
 .alltopsongs-list-container {
-  background: linear-gradient(0deg, #000 10%, #333 100%); }
+  background: linear-gradient(0deg, #000 10%, #333 100%);
+  min-height: 4000px; }
 
 .alltop-ul {
   padding-left: 0px; }
@@ -601,7 +599,44 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
 .play-btn {
   color: #fff;
   font-size: 20px !important;
-  transition: all .2s ease-in-out; }
+  transition: all .2s ease-in-out;
+  margin-left: 15px; }
 
 .play-btn:hover {
   color: #892525; }
+
+.timerange-select-container {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 72%;
+  margin: 0 auto; }
+
+.timerange-select-container select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-family: "futura_maxi_book", serif;
+  line-height: 24px;
+  font-size: 14px; }
+
+.timerange-select-container select:focus {
+  outline: none; }
+
+.alltop-ul:last-child .allsongs-li-container {
+  border-bottom: none; }
+
+.alltop-playlistrender-container {
+  padding-top: 50px; }
+
+.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .playlist-name-input {
+  color: #adaaaa;
+  border-bottom: 2px solid #c6cad1; }
+
+.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .time-selector {
+  color: #adaaaa; }
+
+.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .limit-selector {
+  color: #adaaaa; }
+
+li.inline-block.allsongs-li.allsongs-artist {
+  margin-right: 0; }
