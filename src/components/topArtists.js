@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import queryString from "query-string";
+let parsedURL = queryString.parse(window.location.search);
+let accessToken = parsedURL.access_token;
+
 
 const TopArtists = props => {
   const mostPopularArtists =
@@ -88,7 +92,7 @@ const TopArtists = props => {
           {leastPopularArtists}
         </div>
       </div>
-      {/* <p><Link to='/topartists'>Home</Link></p> */}
+      <p className="see-more-text"><Link to={`/topartists?access_token=${accessToken}`}>See more stats...</Link></p>
     </div>
   );
 };

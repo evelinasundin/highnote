@@ -10,14 +10,13 @@ import queryString from "query-string";
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
 
-// console.log(accessToken);
-
 const Main = () => (
   <main>
     <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/user' component={User}/>
-      <Route exact path='/topartists' component={AllTopArtists}/>
+      <Route path='/topartists' component={AllTopArtists}/>
+      <Route path='/topsongs' component={AllTopSongs}/>
     </Switch>
   </main>
 )

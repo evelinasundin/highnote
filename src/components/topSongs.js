@@ -1,5 +1,10 @@
 import React from "react";
 import 'font-awesome/css/font-awesome.min.css';
+import { Link } from 'react-router-dom';
+import queryString from "query-string";
+
+let parsedURL = queryString.parse(window.location.search);
+let accessToken = parsedURL.access_token;
 
 const TopSongs = props => {
   // console.log(props.topSongs.items &&
@@ -18,6 +23,7 @@ const TopSongs = props => {
                 className="artist-img"
               />
             </div>
+            <i className="fa fa-play-circle-o playlist-symbol"></i>
             </a>
           </div>
           <div className="other-popular-text">
@@ -39,6 +45,7 @@ const TopSongs = props => {
           <div className="songs-small-background">
           <a target="_blank" href={item.external_urls.spotify}>
             <div className="artist-img-container">
+            <i className="fa fa-play-circle-o playlist-symbol"></i>
               <img
                 src={item.album.images[1].url}
                 alt="album cover"
@@ -72,6 +79,7 @@ const TopSongs = props => {
           {topSongsRenderRight}
         </div>
       </div>
+      <p className="see-more-text"><Link to={`/topsongs?access_token=${accessToken}`}>See more stats...</Link></p>
     </div>
   );
 };

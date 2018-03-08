@@ -48,7 +48,7 @@ const recentSongs = props => {
         <div className="recent-right">
           <p className="white-text animate-top">
             {" "}
-            Hi {props.user.name ? props.user.name : props.user.userID}, here
+            hi {props.user.name ? props.user.name : props.user.userID}, here
             presents
           </p>
           <h1 className="white-text animate-bottom">your recently played tracks.</h1>

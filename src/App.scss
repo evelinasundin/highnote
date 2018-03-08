@@ -224,6 +224,10 @@ footer {
 
 // RECENT SONGS
 
+.recentsongs {
+  background-color: $black-color;
+}
+
 .fa-user {
   color: white;
   float: right;
@@ -514,6 +518,7 @@ i.fa.fa-play-circle {
 .playlistrender-container {
   background: linear-gradient(90deg, $white-color 0%, #dbdbdb 100%);
   padding: 100px 100px;
+  text-align: center;
 }
 
 .playlistrender-heading-container h2 {
@@ -522,8 +527,7 @@ i.fa.fa-play-circle {
   font-size: $sub-heading;
   letter-spacing: 3px;
   margin-top: 0;
-  margin-bottom: 50px;
-  width: 890px;
+  margin-bottom: 100px;
 }
 
 .playlistrenderer-info-container {
@@ -562,13 +566,21 @@ i.fa.fa-play-circle {
   background-color: transparent;
   border-bottom: 2px solid black;
   font-size: 20px;
+  font-family: "futura_maxi_bold", serif;
+  color: #757575;
+  line-height: 26px;
 }
 
 .playlist-name-input:focus {
 border: none;
 border-bottom: 2px solid black;
 outline: none;
+color: $dark-red-color;
 
+}
+
+.create-playlist-here {
+  font-size: 22px !important;
 }
 
 .playlist-creator-heading {
@@ -580,22 +592,47 @@ outline: none;
 .time-selector  {
   background-color: transparent;
   border: none;
+  font-family: "futura_maxi_book", serif;
+  line-height: 24px;
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.time-selector:focus {
+  outline:none
 }
 
 .limit-selector  {
   background-color: transparent;
   border: none;
+  font-family: "futura_maxi_book", serif;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+.limit-selector:focus {
+  outline: none
 }
 
 .playlist-submit-btn {
   border: none;
   border-radius: 20px;
   padding: 13px 33px;
+  padding-top: 16px;
   margin-left: 25px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  font-family: "futura_maxi_book", serif;
   background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
   color: white;
-  transition: .2s all ease-in-out;
+  transition: all .2s ease-in-out;
   cursor: pointer;
+}
+
+
+
+.playlist-submit-btn:focus {
+  outline: none;
 }
 
 .playlist-submit-btn:hover {
@@ -608,25 +645,164 @@ outline: none;
 }
 
 
+.modal-container {
+  padding: 50px 100px;
+  text-align: center;
+}
+
+.modal-heading {
+  font-size: 24px;
+  font-family: "futura_maxi_bold", serif;
+  color: #af1f1f;
+  line-height: 28px;
+}
+
+.modal-text {
+  font-size: 16px;
+}
+
+.modal-btn-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.modal-btn  {
+  border-radius: 30px;
+  padding: 20px 40px;
+  padding-top: 20px;
+  margin-left: 25px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: "futura_maxi_book", serif;
+  background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
+  color: white;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  margin-top: 50px;
+
+}
+
+.modal-btn:hover {
+  background: linear-gradient(90deg, #870f0f  0%, #620606 100%);
+
+}
+
+
 
 //ALL SONGS
+
+.alltop-ul:first-child {
+  padding-top: 15px;
+}
+.alltop-ul:last-child {
+  margin-bottom: 0px;
+}
 
 .allsongs-li {
   display: inline-block;
   margin-right: 20px;
-}
-
-.allsongs-artist {
-  margin-right: 0px;
+  vertical-align: middle;
+  color: white;
+  font-family: "futura_maxi_book";
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 .allsongs-album {
   margin-left: 20px;
 }
 
-.allsongs-li {
-  color: $white-color;
-  font-family: "futura_maxi_book";
-  font-size: 14px;
+
+.alltop-img-cover-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
+img.alltop-img-cover {
+  height: 50px;
+  min-width: 50px;
+}
+
+
+
+
+.see-more-text {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.see-more-text a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "futura_maxi_bold", sans-serif;
+  color: white;
+  transition: all .2s ease-in-out;
+}
+
+.see-more-text a:hover {
+color: #333;
+}
+
+i.fa.fa-play-circle-o.playlist-symbol {
+  position: absolute;
+  font-size: 39px;
+  color: white;
+  top: 14%;
+  left: 22%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: 0
+}
+
+.artist-img-container:hover + i.fa.fa-play-circle-o.playlist-symbol  {
+  opacity: 1;
+}
+
+i.fa.fa-play-circle-o.playlist-symbol:hover {
+ opacity: 1;
+}
+
+
+// html, body, .app, #root, main {
+//   height: 100%;
+// }
+
+// .alltopsongs-container {
+//   height: 100%;
+// }
+
+.alltopsongs-select-container {
+  // float:left;
+  // width:200px;
+  // height:100%;
+  // background:red;
+}
+
+.alltopsongs-list-container {
+  background: linear-gradient(0deg, #000 10%, #333 100%);
+}
+
+.alltop-ul {
+  padding-left: 0px;
+}
+
+.allsongs-li-container {
+  width: 70%;
+  margin: 0 auto;
+  border-bottom: 1px solid #c6cad1;
+}
+
+.play-btn {
+  color: $white-color;
+  font-size: 20px !important;
+  transition: all .2s ease-in-out;
+}
+
+
+.play-btn:hover {
+  color: $dark-red-color;
+}
