@@ -21,7 +21,11 @@ class App extends Component {
           <a
             className="inline-block"
             href
-            onClick={() => (window.location = "http://localhost:8888/login")}
+            onClick={() => {
+            window.location = window.location.href.includes('localhost') 
+              ? 'http://localhost:8888/login' 
+              : 'https://better-playlists-backend.herokuapp.com/login' }
+          }
           >
             <p className="home-connect">
               {" "}
