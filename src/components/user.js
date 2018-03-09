@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "../App.css";
 import queryString from "query-string";
-import TopArtists from "./TopArtists";
-import TopSongs from "./TopSongs";
+import TopArtists from "./topArtists";
+import TopSongs from "./topSongs";
 import PlaylistRenderer from "./PlaylistRenderer";
-import RecentSongs from "./RecentSongs";
+import RecentSongs from "./recentSongs";
 import AllTopSongs from "./AllTopSongs";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
@@ -100,7 +100,10 @@ class App extends Component {
           {/* <div className="playlistrender-heading-container">
           <h2>playlist creator.</h2>
         </div> */}
-        <h1 className="create-playlist-heading"> create your playlist here. </h1>
+          <h1 className="create-playlist-heading">
+            {" "}
+            create your playlist here.{" "}
+          </h1>
           <div className="playlistrenderer-info-container">
             <div className="playlistrenderer-info-box">
               <i className="fa fa-pencil playlist-symbol" />
@@ -133,18 +136,27 @@ class App extends Component {
             </div>
             {/* <h2 className="user-playlist-heading"> Create your playlist here: </h2> */}
             <div className="user-playlistrender-container">
-            <PlaylistRenderer userID={this.state.userID} />
+              <PlaylistRenderer userID={this.state.userID} />
             </div>
           </div>
         </div>
-        <footer className="footer-user"> 
+        <footer className="footer-user">
           <div className="footer-links-container">
-          <p className="footer-link-text"><Link to={`/topsongs?access_token=${accessToken}`}>Top songs</Link></p>
-          <p className="footer-link-text"><Link to={`/topartists?access_token=${accessToken}`}>Top artists</Link></p>
-          <p className="footer-link-text"><Link to="/home">Log out</Link></p>
-
-            </div>
-          </footer>
+            <p className="footer-link-text">
+              <Link to={`/topsongs?access_token=${accessToken}`}>
+                Top songs
+              </Link>
+            </p>
+            <p className="footer-link-text">
+              <Link to={`/topartists?access_token=${accessToken}`}>
+                Top artists
+              </Link>
+            </p>
+            <p className="footer-link-text">
+              <Link to="/">Log out</Link>
+            </p>
+          </div>
+        </footer>
       </div>
     );
   }

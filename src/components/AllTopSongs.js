@@ -158,7 +158,7 @@ class AllTopSongs extends Component {
               </Link>
             </p>
             <p className="footer-link-text">
-              <Link to="/home">Log out</Link>
+              <Link to="/">Log out</Link>
             </p>
           </div>
         </footer>
