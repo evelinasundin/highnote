@@ -5,10 +5,7 @@ import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
 import white_logo from "../img/highnote_white.png";
 import PlaylistRenderer from "./PlaylistRenderer";
-import { Link } from 'react-router-dom';
-
-
-
+import { Link } from "react-router-dom";
 
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
@@ -49,8 +46,6 @@ class AllTopSongs extends Component {
     this.setState({ [e.target.name]: e.target.value });
     this.getSongs(e.target.value);
   };
-
-    
 
   getSongs = timeRange => {
     fetch(
@@ -102,8 +97,8 @@ class AllTopSongs extends Component {
       <div className="alltopsongs-container">
         <div className="alltopsongs-list-container">
           <div className="logo recentsongs">
-          <Link to={`/user?access_token=${accessToken}`}>
-            <img src={white_logo} alt="logo-white" className="inline-block" />
+            <Link to={`/user?access_token=${accessToken}`}>
+              <img src={white_logo} alt="logo-white" className="inline-block" />
             </Link>
             <p className="user inline-block white-text">
               {" "}
@@ -114,6 +109,10 @@ class AllTopSongs extends Component {
 
             <i className="fa fa-user" />
           </div>
+          <h1 className="white-text mostplayed-text animate-top">
+            {" "}
+            These are your most played artists:{" "}
+          </h1>
           <div className="timerange-select-container animate-top">
             <select
               name="timeRange"
@@ -130,14 +129,21 @@ class AllTopSongs extends Component {
           </div>
           {songName}
         </div>
-        <footer> 
+        <footer>
           <div className="footer-links-container">
-          <p className="footer-link-text"><Link to={`/user?access_token=${accessToken}`}>Start</Link></p>
-          <p className="footer-link-text"><Link to={`/topartists?access_token=${accessToken}`}>Top artists</Link></p>
-          <p className="footer-link-text"><Link to="/home">Log out</Link></p>
-
-            </div>
-          </footer>
+            <p className="footer-link-text">
+              <Link to={`/user?access_token=${accessToken}`}>Start</Link>
+            </p>
+            <p className="footer-link-text">
+              <Link to={`/topsongs?access_token=${accessToken}`}>
+                Top songs
+              </Link>
+            </p>
+            <p className="footer-link-text">
+              <Link to="/home">Log out</Link>
+            </p>
+          </div>
+        </footer>
       </div>
     );
   }

@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import queryString from "query-string";
-import playbtn from "../img/playbtn.png"
+import playbtn from "../img/playbtn.png";
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
-
 
 const TopArtists = props => {
   const mostPopularArtists =
@@ -31,19 +30,17 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
-          <div className="artist-img-container">
-            <img
-              src={item.images[1].url}
-              alt="album cover"
-              className="artist-img"
-            />
+            <div className="artist-img-container">
+              <img
+                src={item.images[1].url}
+                alt="album cover"
+                className="artist-img"
+              />
             </div>
           </div>
           <div className="other-popular-text">
-          <p className="white-text">
-             {i + 1 + "."}
-            </p>
-          <p className="white-text">{item.name}</p>
+            <p className="white-text">{i + 1 + "."}</p>
+            <p className="white-text">{item.name}</p>
           </div>
         </div>
       );
@@ -55,19 +52,17 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
-          <div className="artist-img-container  ">
-            <img
-              src={item.images[1].url}
-              alt="album cover"
-              className="artist-img"
-            />
+            <div className="artist-img-container  ">
+              <img
+                src={item.images[1].url}
+                alt="album cover"
+                className="artist-img"
+              />
             </div>
           </div>
           <div className="other-popular-text">
-          <p className="white-text">
-             {i + 6 + "."}
-            </p>
-          <p className="white-text">{item.name}</p>
+            <p className="white-text">{i + 6 + "."}</p>
+            <p className="white-text">{item.name}</p>
           </div>
         </div>
       );
@@ -76,7 +71,7 @@ const TopArtists = props => {
   return (
     <div className="artist-container">
       <div className="artist-heading-container">
-      <h2 className="white-text">these are</h2>
+        <h2 className="white-text">these are</h2>
         <h2 className="white-text">your most played artists.</h2>
       </div>
       {/* <div className="artist-container-row">{mostPopularArtists}</div> */}
@@ -88,7 +83,11 @@ const TopArtists = props => {
           {leastPopularArtists}
         </div>
       </div>
-      <p className="see-more-text"><Link to={`/topartists?access_token=${accessToken}`}>See more stats...</Link></p>
+      <p className="see-more-text">
+        <Link to={`/topartists?access_token=${accessToken}`}>
+          See more stats...
+        </Link>
+      </p>
     </div>
   );
 };

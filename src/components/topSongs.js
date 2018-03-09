@@ -1,6 +1,6 @@
 import React from "react";
-import 'font-awesome/css/font-awesome.min.css';
-import { Link } from 'react-router-dom';
+import "font-awesome/css/font-awesome.min.css";
+import { Link } from "react-router-dom";
 import queryString from "query-string";
 
 let parsedURL = queryString.parse(window.location.search);
@@ -27,7 +27,12 @@ const TopSongs = props => {
             <p className="white-text">{i + 1 + "."}</p>
             <p className="white-text">{item.name}</p>
             {item.artists.map(function(artist, i) {
-              return <p className="white-text inline-block" key={artist.id}>{artist.name}{i !== item.artists.length -1? ',\xa0': ''}</p>;
+              return (
+                <p className="white-text inline-block" key={artist.id}>
+                  {artist.name}
+                  {i !== item.artists.length - 1 ? ",\xa0" : ""}
+                </p>
+              );
             })}
           </div>
         </div>
@@ -52,7 +57,11 @@ const TopSongs = props => {
             <p className="white-text">{i + 6 + "."}</p>
             <p className="white-text">{item.name}</p>
             {item.artists.map(function(artist) {
-              return <p className="white-text" key={artist.id}>{artist.name}</p>;
+              return (
+                <p className="white-text" key={artist.id}>
+                  {artist.name}
+                </p>
+              );
             })}
           </div>
         </div>
@@ -73,7 +82,11 @@ const TopSongs = props => {
           {topSongsRenderRight}
         </div>
       </div>
-      <p className="see-more-text"><Link to={`/topsongs?access_token=${accessToken}`}>See more stats...</Link></p>
+      <p className="see-more-text">
+        <Link to={`/topsongs?access_token=${accessToken}`}>
+          See more stats...
+        </Link>
+      </p>
     </div>
   );
 };
