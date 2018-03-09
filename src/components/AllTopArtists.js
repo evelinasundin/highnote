@@ -5,6 +5,10 @@ import ReactDOM from "react-dom";
 import Modal from "react-responsive-modal";
 import white_logo from "../img/highnote_white.png";
 import PlaylistRenderer from "./PlaylistRenderer";
+import { Link } from 'react-router-dom';
+
+
+
 
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
@@ -46,6 +50,8 @@ class AllTopSongs extends Component {
     this.getSongs(e.target.value);
   };
 
+    
+
   getSongs = timeRange => {
     fetch(
       `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&&limit=50`,
@@ -72,11 +78,11 @@ class AllTopSongs extends Component {
               <li className="allsongs-li">{i + 1 + "."}</li>
               <li className="allsongs-li">
                 <div className="alltop-img-cover-container">
-                <img
-                src={item.images[1].url}
-                alt="album cover"
-                className="artist-img"
-              />
+                  <img
+                    src={item.images[1].url}
+                    alt="album cover"
+                    className="artist-img"
+                  />
                 </div>{" "}
               </li>
 
@@ -96,16 +102,19 @@ class AllTopSongs extends Component {
       <div className="alltopsongs-container">
         <div className="alltopsongs-list-container">
           <div className="logo recentsongs">
+          <Link to={`/user?access_token=${accessToken}`}>
             <img src={white_logo} alt="logo-white" className="inline-block" />
+            </Link>
             <p className="user inline-block white-text">
               {" "}
               {this.state.user.name
                 ? this.state.user.name
                 : this.state.user.userID}
             </p>
+
             <i className="fa fa-user" />
           </div>
-          <div className="timerange-select-container">
+          <div className="timerange-select-container animate-top">
             <select
               name="timeRange"
               placeholder="Select your period of time"
@@ -121,6 +130,14 @@ class AllTopSongs extends Component {
           </div>
           {songName}
         </div>
+        <footer> 
+          <div className="footer-links-container">
+          <p className="footer-link-text"><Link to={`/user?access_token=${accessToken}`}>Start</Link></p>
+          <p className="footer-link-text"><Link to={`/topartists?access_token=${accessToken}`}>Top artists</Link></p>
+          <p className="footer-link-text"><Link to="/home">Log out</Link></p>
+
+            </div>
+          </footer>
       </div>
     );
   }

@@ -311,7 +311,15 @@ i.fa.fa-angle-down.white-text {
   position: absolute;
   margin-top: -15px;
   margin-left: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); }
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: #c4574b;
+  transition: all 0.2s ease-in-out; }
+
+.artist-img-container:hover {
+  transition: all 0.2s ease-in-out; }
+
+.artist-img-container-songs {
+  background-color: #892525 !important; }
 
 @keyframes animatetop {
   from {
@@ -352,15 +360,16 @@ i.fa.fa-angle-down.white-text {
   position: relative;
   animation: btnscroll ease 2.5s infinite; }
 
-.artist-img-container:hover:before {
-  content: "";
-  height: 100%;
-  width: 101%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  opacity: 0.6;
-  background-color: #000; }
+.playbtn {
+  background-image: url("./img/playbtn.png");
+  height: 100px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  display: none;
+  background-position: center; }
+
+.artist-img-container:hover > .playbtn {
+  display: block; }
 
 .fa-play-circle {
   position: absolute;
@@ -478,7 +487,7 @@ i.fa.fa-play-circle {
   font-family: "futura_maxi_book", serif;
   background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
   color: white;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer; }
 
 .playlist-submit-btn:focus {
@@ -518,7 +527,7 @@ i.fa.fa-play-circle {
   font-family: "futura_maxi_book", serif;
   background: linear-gradient(90deg, #af1f1f 0%, #892525 100%);
   color: white;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
   margin-top: 50px; }
 
@@ -562,7 +571,7 @@ img.alltop-img-cover {
   font-size: 18px;
   font-family: "futura_maxi_bold", sans-serif;
   color: white;
-  transition: all .2s ease-in-out; }
+  transition: all 0.2s ease-in-out; }
 
 .see-more-text a:hover {
   color: #333; }
@@ -586,7 +595,8 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
 
 .alltopsongs-list-container {
   background: linear-gradient(0deg, #000 10%, #333 100%);
-  min-height: 4000px; }
+  min-height: 4000px;
+  padding-bottom: 100px; }
 
 .alltop-ul {
   padding-left: 0px; }
@@ -599,7 +609,7 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
 .play-btn {
   color: #fff;
   font-size: 20px !important;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   margin-left: 15px; }
 
 .play-btn:hover {
@@ -608,7 +618,7 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
 .timerange-select-container {
   padding-top: 50px;
   padding-bottom: 30px;
-  width: 72%;
+  width: 71.5%;
   margin: 0 auto; }
 
 .timerange-select-container select {
@@ -628,15 +638,84 @@ i.fa.fa-play-circle-o.playlist-symbol:hover {
 .alltop-playlistrender-container {
   padding-top: 50px; }
 
-.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .playlist-name-input {
+.alltop-playlistrender-container
+.playlist-creator-container
+.submit-playlist
+.inline-block
+.playlist-name-input {
   color: #adaaaa;
   border-bottom: 2px solid #c6cad1; }
 
-.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .time-selector {
+.alltop-playlistrender-container
+.playlist-creator-container
+.submit-playlist
+.inline-block
+.time-selector {
   color: #adaaaa; }
 
-.alltop-playlistrender-container .playlist-creator-container .submit-playlist .inline-block .limit-selector {
+.alltop-playlistrender-container
+.playlist-creator-container
+.submit-playlist
+.inline-block
+.limit-selector {
   color: #adaaaa; }
 
 li.inline-block.allsongs-li.allsongs-artist {
   margin-right: 0; }
+
+.user-playlistrender-container {
+  padding-top: 100px; }
+
+.recentsongs {
+  position: relative; }
+
+.footer-user {
+  background-color: #333;
+  position: relative; }
+
+.footer-links-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 30%;
+  text-align: center; }
+
+.footer-link-text a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "futura_maxi_bold", sans-serif;
+  letter-spacing: 2px;
+  transition: all .2s ease-in-out; }
+
+.footer-link-text a:hover {
+  color: #892525; }
+
+.footer-link-text {
+  margin-bottom: 10px; }
+
+footer {
+  position: relative; }
+
+h2.topsongs-h2-heading {
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #892525;
+  font-family: "futura_maxi_bold";
+  text-decoration: underline;
+  width: 70.5%;
+  margin: 0 auto; }
+
+.mostplayed-text {
+  width: 70.5%;
+  margin: 0 auto;
+  padding-top: 70px;
+  font-size: 14px !important; }
+
+h2.user-playlist-heading {
+  padding-top: 80px;
+  font-family: "futura_maxi_bold";
+  color: #333; }
+
+.create-playlist-heading {
+  margin-bottom: 100px;
+  color: #892525 !important; }

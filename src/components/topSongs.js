@@ -15,16 +15,13 @@ const TopSongs = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="songs-small-background">
-          <a target="_blank" href={item.external_urls.spotify}>
-            <div className="artist-img-container">
+            <div className="artist-img-container artist-img-container-songs">
               <img
                 src={item.album.images[1].url}
                 alt="album cover"
                 className="artist-img"
               />
             </div>
-            <i className="fa fa-play-circle-o playlist-symbol"></i>
-            </a>
           </div>
           <div className="other-popular-text">
             <p className="white-text">{i + 1 + "."}</p>
@@ -43,16 +40,13 @@ const TopSongs = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="songs-small-background">
-          <a target="_blank" href={item.external_urls.spotify}>
-            <div className="artist-img-container">
-            <i className="fa fa-play-circle-o playlist-symbol"></i>
+            <div className="artist-img-container artist-img-container-songs">
               <img
                 src={item.album.images[1].url}
                 alt="album cover"
                 className="artist-img"
               />
             </div>
-            </a>
           </div>
           <div className="other-popular-text">
             <p className="white-text">{i + 6 + "."}</p>

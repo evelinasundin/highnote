@@ -9,6 +9,11 @@ import casette from "../img/casette.jpeg";
 
 class App extends Component {
 
+  componentDidMount() { 
+    window.scrollTo(0, 0);
+
+  }
+
   render() {
     return (
       <div>
@@ -76,6 +81,11 @@ class App extends Component {
           </div>
           </div>
           <footer> 
+          <a href="">connect</a>
+          <a href="">github</a>
+          <a href="">a nice playlist</a>
+  
+
           </footer>
 
 

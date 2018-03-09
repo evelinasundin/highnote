@@ -38,7 +38,13 @@ const recentSongs = props => {
     <div className="recentSongsContainer">
       <div className="logo recentsongs">
         <img src={white_logo} alt="logo-white" className="inline-block"/>
+
     <p className="user inline-block white-text"> {props.user.name ? props.user.name : props.user.userID}</p><i className="fa fa-user"></i>
+    {/* <div className="sub-menu">
+        <p className="white-text">hej</p>
+        <p className="white-text">hej</p>
+    </div> */}
+
       </div>
       <div className="recent-row">
         <div className="recent-left">

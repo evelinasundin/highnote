@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import queryString from "query-string";
+import playbtn from "../img/playbtn.png"
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
 
@@ -30,16 +31,13 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
-          <a target="_blank" href={item.external_urls.spotify}>
           <div className="artist-img-container">
             <img
               src={item.images[1].url}
               alt="album cover"
               className="artist-img"
             />
-            <i className="fa fa-play-circle"></i>
             </div>
-            </a>
           </div>
           <div className="other-popular-text">
           <p className="white-text">
@@ -57,15 +55,13 @@ const TopArtists = props => {
       return (
         <div key={item.id} className="other-popular-container">
           <div className="artist-small-background">
-          <a target="_blank" href={item.external_urls.spotify}>
-          <div className="artist-img-container">
+          <div className="artist-img-container  ">
             <img
               src={item.images[1].url}
               alt="album cover"
               className="artist-img"
             />
             </div>
-            </a>
           </div>
           <div className="other-popular-text">
           <p className="white-text">
