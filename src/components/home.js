@@ -21,21 +21,21 @@ class App extends Component {
     return (
       <div>
         <div className="logo">
-          <img src={black_logo} alt="logo" />    
+          <img src={black_logo} alt="logo" />
           <a
             className="inline-block"
             href
             onClick={() => {
-            window.location = window.location.href.includes('localhost') 
-              ? 'http://localhost:8888/login' 
-              : 'https://highnote-app-backend.herokuapp.com/login' }
-          }
-          >     
+              window.location = window.location.href.includes("localhost")
+                ? "http://localhost:8888/login"
+                : "https://highnote-app-backend.herokuapp.com/login";
+            }}
+          >
             <p className="home-connect">
               {" "}
               connect <i class="fa fa-spotify spotify-link" />{" "}
             </p>
-            <Link to={`/topartists?access_token=${accessToken}`}>   </Link>  
+            <Link to={`/topartists?access_token=${accessToken}`}> </Link>
           </a>
         </div>
         <div>
@@ -49,7 +49,11 @@ class App extends Component {
           <div className="button">
             <a
               href
-              onClick={() => (window.location = "http://localhost:8888/login")}
+              onClick={() => {
+                window.location = window.location.href.includes("localhost")
+                  ? "http://localhost:8888/login"
+                  : "https://highnote-app-backend.herokuapp.com/login";
+              }}
             >
               {" "}
               connect with spotify{" "}
@@ -91,8 +95,11 @@ class App extends Component {
             <div className="button red-button">
               <a
                 href
-                onClick={() =>
-                  (window.location = "http://localhost:8888/login")}
+                onClick={() => {
+                  window.location = window.location.href.includes("localhost")
+                    ? "http://localhost:8888/login"
+                    : "https://highnote-app-backend.herokuapp.com/login";
+                }}
               >
                 {" "}
                 connect with spotify{" "}
@@ -104,8 +111,11 @@ class App extends Component {
               <p className="footer-link-text">
                 <a
                   href
-                  onClick={() =>
-                    (window.location = "http://localhost:8888/login")}
+                  onClick={() => {
+                    window.location = window.location.href.includes("localhost")
+                      ? "http://localhost:8888/login"
+                      : "https://highnote-app-backend.herokuapp.com/login";
+                  }}
                 >
                   connect
                 </a>
