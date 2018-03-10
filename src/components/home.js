@@ -24,7 +24,7 @@ class App extends Component {
             onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
-              : 'https://highnote-backend.herokuapp.com/login' }
+              : 'https://highnote-app-backend.herokuapp.com/login' }
           }
           >
             <p className="home-connect">
