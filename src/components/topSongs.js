@@ -75,10 +75,10 @@ const TopSongs = props => {
         <h2 className="white-text">your most played songs.</h2>
       </div>
       <div className="artists-list-container">
-        <div className="other-popular-artists-container">
+        <div className="list-container">
           {topSongsRenderLeft}
         </div>
-        <div className="least-popular-artists-container">
+        <div className="list-container">
           {topSongsRenderRight}
         </div>
       </div>

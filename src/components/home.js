@@ -6,6 +6,11 @@ import stats_pic from "../img/stats_pic.jpeg";
 import playlists_pic from "../img/playlists_pic.jpeg";
 import kanye from "../img/kanye.jpeg";
 import casette from "../img/casette.jpeg";
+import { Link } from "react-router-dom";
+import queryString from "query-string";
+
+let parsedURL = queryString.parse(window.location.search);
+let accessToken = parsedURL.access_token;
 
 class App extends Component {
   componentDidMount() {
@@ -16,8 +21,7 @@ class App extends Component {
     return (
       <div>
         <div className="logo">
-          <img src={black_logo} alt="logo" />
-
+          <img src={black_logo} alt="logo" />    
           <a
             className="inline-block"
             href
@@ -26,11 +30,12 @@ class App extends Component {
               ? 'http://localhost:8888/login' 
               : 'https://highnote-app-backend.herokuapp.com/login' }
           }
-          >
+          >     
             <p className="home-connect">
               {" "}
               connect <i class="fa fa-spotify spotify-link" />{" "}
             </p>
+            <Link to={`/topartists?access_token=${accessToken}`}>   </Link>  
           </a>
         </div>
         <div>

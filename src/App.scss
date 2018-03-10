@@ -104,11 +104,6 @@ h3 {
   color: $white-color;
   cursor: pointer;
   transition: all 0.1s ease-in;
-  // animation: fadein 6s forwards;
-  // -moz-animation: fadein 6s forwards; /* Firefox */
-  // -webkit-animation: fadein 6s forwards; /* Safari and Chrome */
-  // -o-animation: fadein 6s forwards; /* Opera */
-  // opacity: 0;
 }
 
 .red-button a {
@@ -313,11 +308,6 @@ i.fa.fa-angle-down.white-text {
   margin-right: 0;
 }
 
-// .artist-img-container-big {
-//   width: 400px;
-//   overflow: hidden;
-
-// }
 .artist-img-big {
   height: 350px;
   overflow: hidden;
@@ -357,7 +347,7 @@ i.fa.fa-angle-down.white-text {
   margin-top: 110px;
 }
 
-.least-popular-artists-container {
+.list-container {
   display: inline-block;
   width: 50%;
 }
@@ -483,7 +473,6 @@ i.fa.fa-angle-down.white-text {
   left: 50%;
   transform: translateX(-50%);
   display: none;
-  /* transform: translateY(-50%); */
 }
 
 i.fa.fa-play-circle {
@@ -744,21 +733,6 @@ i.fa.fa-play-circle-o.playlist-symbol {
 
 i.fa.fa-play-circle-o.playlist-symbol:hover {
   opacity: 1;
-}
-
-// html, body, .app, #root, main {
-//   height: 100%;
-// }
-
-// .alltopsongs-container {
-//   height: 100%;
-// }
-
-.alltopsongs-select-container {
-  // float:left;
-  // width:200px;
-  // height:100%;
-  // background:red;
 }
 
 .alltopsongs-list-container {
