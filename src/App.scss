@@ -348,8 +348,7 @@ i.fa.fa-angle-down.white-text {
   margin-bottom: 100px;
 }
 
-.other-popular-artists-container,
-  {
+.other-popular-artists-container {
   display: inline-block;
   width: 50%;
 }
@@ -872,7 +871,7 @@ li.inline-block.allsongs-li.allsongs-artist {
   text-decoration: none;
   font-family: "futura_maxi_bold", sans-serif;
   letter-spacing: 2px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
@@ -911,7 +910,6 @@ h2.user-playlist-heading {
   color: #333;
 }
 
-
 .create-playlist-heading {
   margin-bottom: 100px;
   color: $dark-red-color !important;
@@ -925,7 +923,7 @@ p.home-connect {
   font-size: 16px;
   font-family: "futura_maxi_bold";
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 p.home-connect:hover {
