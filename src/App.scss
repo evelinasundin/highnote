@@ -288,6 +288,15 @@ i.fa.fa-angle-down.white-text {
   padding-bottom: 5px;
 }
 
+.list-container {
+  display: inline-block;
+  width: 50%;
+}
+.list-container {
+    display: inline-block;
+    width: 50%;
+}
+
 // Top artists
 
 .artist-container-row {
@@ -345,11 +354,6 @@ i.fa.fa-angle-down.white-text {
 
 .artists-list-container {
   margin-top: 110px;
-}
-
-.list-container {
-  display: inline-block;
-  width: 50%;
 }
 
 .artist-small-background {
