@@ -77,9 +77,11 @@ const TopArtists = props => {
       {/* <div className="artist-container-row">{mostPopularArtists}</div> */}
       <div className="artists-list-container">
         <div className="list-container">
+          <p className="no-margin"></p>
           {otherPopularArtists}
         </div>
         <div className="list-container">
+        <p className="no-margin"></p>
           {leastPopularArtists}
         </div>
       </div>
