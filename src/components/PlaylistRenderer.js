@@ -53,7 +53,7 @@ class PlaylistRenderer extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  addSongs = event => {
+  getTopSongs = event => {
     event.preventDefault();
     fetch(
       `https://api.spotify.com/v1/me/top/tracks?time_range=${this.state
@@ -114,7 +114,7 @@ class PlaylistRenderer extends Component {
 
     return (
       <div className="playlist-creator-container">
-        <form className="submit-playlist" onSubmit={this.addSongs}>
+        <form className="submit-playlist" onSubmit={this.getTopSongs}>
           <div className="inline-block">
             <input
               type="text"
