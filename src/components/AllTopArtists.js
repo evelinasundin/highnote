@@ -6,6 +6,7 @@ import Modal from "react-responsive-modal";
 import white_logo from "../img/highnote_white.png";
 import PlaylistRenderer from "./PlaylistRenderer";
 import { Link } from "react-router-dom";
+import TimeRangeSelector from "./TimeRangeSelector";
 
 let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
@@ -76,7 +77,7 @@ class AllTopSongs extends Component {
                   <img
                     src={item.images[1].url}
                     alt="album cover"
-                    className="artist-img"
+                    className="artist-img-small"
                   />
                 </div>{" "}
               </li>
@@ -114,18 +115,7 @@ class AllTopSongs extends Component {
             These are your most played artists:{" "}
           </h1>
           <div className="timerange-select-container animate-top">
-            <select
-              name="timeRange"
-              placeholder="Select your period of time"
-              className="inline-block"
-              value={this.state.timeRange}
-              onChange={this.onChange}
-              required
-            >
-              <option value="short_term">Last month</option>
-              <option value="medium_term">Half year</option>
-              <option value="long_term">All time</option>
-            </select>
+            <TimeRangeSelector timeRange={this.state.timeRange} onChange={this.onChange}/>
           </div>
           {songName}
         </div>
