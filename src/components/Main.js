@@ -1,8 +1,8 @@
 import React from "react";
 import "../App.css";
 import { Switch, Route } from "react-router";
-import Home from "./home";
-import User from "./user";
+import Home from "./Home";
+import User from "./User";
 import AllTopSongs from "./AllTopSongs";
 import AllTopArtists from "./AllTopArtists";
 import queryString from "query-string";

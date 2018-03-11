@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "../App.css";
 import queryString from "query-string";
-import TopArtists from "./topArtists";
-import TopSongs from "./topSongs";
+import TopArtists from "./TopArtists";
+import TopSongs from "./TopSongs";
 import PlaylistRenderer from "./PlaylistRenderer";
-import RecentSongs from "./recentSongs";
+import RecentSongs from "./RecentSongs";
 import AllTopSongs from "./AllTopSongs";
 import { Link } from "react-router-dom";
 
