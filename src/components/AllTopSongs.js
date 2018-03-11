@@ -133,7 +133,10 @@ class AllTopSongs extends Component {
             These are your most played tracks:{" "}
           </h1>
           <div className="timerange-select-container animate-top">
-          <TimeRangeSelector timeRange={this.state.timeRange} onChange={this.onChange}/>
+            <TimeRangeSelector
+              timeRange={this.state.timeRange}
+              onChange={this.onChange}
+            />
           </div>
           {songName}
         </div>

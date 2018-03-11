@@ -75,12 +75,8 @@ const TopSongs = props => {
         <h2 className="white-text">your most played songs.</h2>
       </div>
       <div className="artists-list-container">
-        <div className="list-container">
-          {topSongsRenderLeft}
-        </div>
-        <div className="list-container">
-          {topSongsRenderRight}
-        </div>
+        <div className="list-container">{topSongsRenderLeft}</div>
+        <div className="list-container">{topSongsRenderRight}</div>
       </div>
       <p className="see-more-text">
         <Link to={`/topsongs?access_token=${accessToken}`}>

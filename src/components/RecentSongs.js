@@ -53,7 +53,7 @@ const recentSongs = props => {
         </div>
 
         <div className="recent-right">
-          <div class="recent-right-container">
+          <div className="recent-right-container">
             <p className="white-text animate-top">
               {" "}
               hi {props.user.name ? props.user.name : props.user.userID}, here

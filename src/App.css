@@ -52,7 +52,8 @@ h3 {
   font-size: 75px;
   letter-spacing: 2px;
   color: #fff;
-  margin: 0; }
+  margin: 0;
+  line-height: 90px; }
 
 h3 {
   color: #000;
@@ -741,3 +742,6 @@ p.home-connect:hover {
 .artist-img-small {
   height: 50px;
   min-width: 50px; }
+
+.recent-right-container {
+  padding-left: 15px; }

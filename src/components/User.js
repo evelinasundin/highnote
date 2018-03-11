@@ -41,6 +41,14 @@ class App extends Component {
         })
       );
 
+      fetch("https://api.spotify.com/v1/me", {
+        headers: { Authorization: "Bearer " + accessToken }
+        // which returns a response as a promise
+      })
+        .then(response => response.json())
+        .then(data => console.log(data)
+        );
+
     fetch("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
       headers: { Authorization: "Bearer " + accessToken }
       // which returns a response as a promise
@@ -84,7 +92,8 @@ class App extends Component {
   render() {
     // console.log(this.state.topArtists);
     // console.log(this.state.recentlyPlayed);
-    <AllTopSongs topSongs={this.state.topSongs} />;
+    // <AllTopSongs topSongs={this.state.topSongs} />;
+    console.log(this.state.user);
 
     return (
       <div>
