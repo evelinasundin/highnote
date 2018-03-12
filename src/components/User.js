@@ -41,14 +41,6 @@ class App extends Component {
         })
       );
 
-      fetch("https://api.spotify.com/v1/me", {
-        headers: { Authorization: "Bearer " + accessToken }
-        // which returns a response as a promise
-      })
-        .then(response => response.json())
-        .then(data => console.log(data)
-        );
-
     fetch("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
       headers: { Authorization: "Bearer " + accessToken }
       // which returns a response as a promise
@@ -90,14 +82,10 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.topArtists);
-    // console.log(this.state.recentlyPlayed);
-    // <AllTopSongs topSongs={this.state.topSongs} />;
     console.log(this.state.user);
 
     return (
       <div>
-        {/* <h1>Hi {name ? name : userID}!</h1> */}
         <RecentSongs
           recentSongs={this.state.recentlyPlayed}
           user={this.state.user}
@@ -106,9 +94,6 @@ class App extends Component {
         <TopSongs topSongs={this.state.topSongs} />
 
         <div className="playlistrender-container">
-          {/* <div className="playlistrender-heading-container">
-          <h2>playlist creator.</h2>
-        </div> */}
           <h1 className="create-playlist-heading">
             {" "}
             create your playlist here.{" "}
@@ -143,7 +128,6 @@ class App extends Component {
                 of your highest notes.
               </p>
             </div>
-            {/* <h2 className="user-playlist-heading"> Create your playlist here: </h2> */}
             <div className="user-playlistrender-container">
               <PlaylistRenderer userID={this.state.userID} />
             </div>

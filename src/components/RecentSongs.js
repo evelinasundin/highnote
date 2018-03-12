@@ -47,6 +47,11 @@ const recentSongs = props => {
         </p>
         <i className="fa fa-user" />
       </div>
+      <p className="white-text animate-top mobile-text">
+              {" "}
+              hi {props.user.name ? props.user.name : props.user.userID}, here
+              are your recent played tracks
+            </p>
       <div className="recent-row">
         <div className="recent-left">
           <div>{recentlyPlayed}</div>

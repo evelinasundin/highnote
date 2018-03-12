@@ -7,8 +7,6 @@ let parsedURL = queryString.parse(window.location.search);
 let accessToken = parsedURL.access_token;
 
 const TopSongs = props => {
-  // console.log(props.topSongs.items &&
-  //   props.topSongs.items);
   const topSongsRenderLeft =
     props.topSongs.items &&
     props.topSongs.items.slice(0, 5).map(function(item, i) {

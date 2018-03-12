@@ -74,7 +74,6 @@ const TopArtists = props => {
         <h2 className="white-text">these are</h2>
         <h2 className="white-text">your most played artists.</h2>
       </div>
-      {/* <div className="artist-container-row">{mostPopularArtists}</div> */}
       <div className="artists-list-container">
         <div className="list-container">
           <p className="no-margin" />

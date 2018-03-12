@@ -28,17 +28,19 @@ p {
 .hero {
   position: relative;
   margin-left: 50px;
-  margin-right: 50px; }
+  margin-right: 50px;
+  height: 90vh;
+  overflow: hidden; }
 
 .hero img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90vh; }
+  height: auto; }
 
 .hero-text {
   position: absolute;
-  top: 45%;
+  top: 40%;
   transform: translateY(-50%);
   text-align: center;
   left: 50%;
@@ -213,6 +215,9 @@ i.fa.fa-angle-down.white-text {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 82px; }
+
+.mobile-text {
+  display: none; }
 
 .recent-right {
   position: absolute;
@@ -745,3 +750,153 @@ p.home-connect:hover {
 
 .recent-right-container {
   padding-left: 15px; }
+
+.playlist-name-input {
+  margin-bottom: 20px; }
+
+@media only screen and (max-width: 1180px) {
+  .artist-small-background {
+    width: 315px; }
+  .songs-small-background {
+    width: 315px; }
+  .other-popular-text {
+    max-width: 175px; }
+  .other-popular-text {
+    left: 45%; }
+  .other-popular-text p {
+    font-size: 14px; }
+  .playlistrenderer-info-box {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+  .create-playlist-heading {
+    margin-bottom: 50px; } }
+
+@media only screen and (max-width: 980px) {
+  .hero img {
+    width: auto;
+    height: 100%; }
+  .img-holder-left,
+  .img-holder-right {
+    display: block;
+    width: 100%; }
+  .mobile-text {
+    display: block;
+    padding-left: 50px;
+    padding-top: 30px; }
+  .recent-right {
+    display: none; }
+  .recent-left {
+    display: block;
+    width: 100%; }
+  .recent-row {
+    padding-top: 40px; } }
+
+@media only screen and (max-width: 865px) {
+  .list-container {
+    display: block;
+    width: 100%; }
+  .other-popular-text {
+    left: 47%; }
+  .artist-small-background .songs-small-background {
+    width: 485px; }
+  .mobile-text {
+    padding-left: 25px; }
+  .topsong-container,
+  .artist-container {
+    padding: 25px; }
+  .recent-row {
+    padding-left: 25px;
+    padding-right: 25px; }
+  .create-playlist-heading {
+    font-size: 50px;
+    margin-bottom: 50px; }
+  .playlist-name-input {
+    width: 450px;
+    margin-bottom: 20px; } }
+
+@media only screen and (max-width: 680px) {
+  .songs-small-background {
+    width: 400px; }
+  .artist-small-background {
+    width: 400px; }
+  .other-popular-text {
+    left: 37%; }
+  .playlistrender-container {
+    padding: 50px 50px; } }
+
+@media only screen and (max-width: 580px) {
+  p {
+    font-size: 14px; }
+  .img-holder-right,
+  .img-holder-left {
+    max-height: 400px; }
+  .img-holder-right img,
+  .img-holder-left img {
+    height: 414px; }
+  h4 {
+    letter-spacing: 3px;
+    font-size: 88px; }
+  .artist-small-background .songs-small-background {
+    width: 350px; }
+  .other-popular-text {
+    left: 42%; }
+  .songs-small-background ~ .artist-small-background.other-popular-text {
+    left: 38% !important; }
+  .playlist-name-input {
+    width: 350px;
+    display: block !important; }
+  .artist-heading-container h2 {
+    font-size: 50px; }
+  .artists-list-container {
+    margin-top: 50px; }
+  .artist-heading-container {
+    margin-bottom: 50px; }
+  .user-playlistrender-container {
+    padding-top: 50px; }
+  .playlistrenderer-info-container {
+    margin-bottom: 50px; } }
+
+@media only screen and (max-width: 479px) {
+  .logo img {
+    width: 40px;
+    margin-left: 10px; }
+  .other-popular-text {
+    left: 36%; }
+  .user {
+    font-size: 14px;
+    padding-right: 10px; }
+  .hero {
+    margin-left: 10px;
+    margin-right: 10px; }
+  p.home-connect {
+    top: 3.5%;
+    margin-right: 10px;
+    font-size: 14px; }
+  h2.animate-bottom {
+    display: none; }
+  .button a {
+    font-size: 11px; }
+  .hero-text {
+    top: 40%; }
+  .hero-text h1,
+  .hero-text h2,
+  h3 {
+    font-size: 65px;
+    line-height: 75px; }
+  .fp-text {
+    padding: 40px 10px;
+    width: 95%; }
+  .fp-text h3 {
+    font-size: 59px;
+    line-height: 65px; }
+  .button {
+    left: 47%; }
+  .mostplayed-text {
+    padding-top: 50px; }
+  .allsongs-li-container {
+    width: 95%; }
+  .mostplayed-text {
+    width: 95%; }
+  .timerange-select-container {
+    width: 95%; } }
