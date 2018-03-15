@@ -44,7 +44,7 @@ class App extends Component {
           </div>
           <div className="hero-text">
             <h1 className="animate-top">high note</h1>
-            <h2 className="animate-bottom">ur track keeper.</h2>
+            <h2 className="animate-bottom">your personal track keeper.</h2>
           </div>
           <div className="button">
             <a
@@ -60,8 +60,8 @@ class App extends Component {
             </a>
           </div>
           <div className="fp-text">
-            <h3> it keeps track of all of your tracks</h3>
-            <p>lorem ipsum lorem ipsum lorem ipsum loooorem ipsum </p>
+            <h3> it keeps track of all of your most listened songs</h3>
+            <p> the purpose of this application is to show you statistics of your highest notes - that is your most listened to songs. </p>
           </div>
           <div className="img-container">
             <div className="img-holder-left opacity">
@@ -75,7 +75,7 @@ class App extends Component {
           </div>
           <div className="fp-text">
             <h3>check your stats and create your own playlists</h3>
-            <p>lorem ipsum lorem ipsum lorem ipsum loooorem ipsum </p>
+            <p> the application gives you a nice overview of your recent played songs, most played songs and most played artist. <br></br> Besides that it can create a personal playlist that contains your most most listened songs. </p>
           </div>
           <div className="img-container">
             <div className="img-holder-left">
@@ -88,8 +88,8 @@ class App extends Component {
             </div>
           </div>
           <div className="fp-text">
-            <h3> it keeps track of all of your tracks</h3>
-            <p>lorem ipsum lorem ipsum lorem ipsum loooorem ipsum </p>
+            <h3> check your most played songs and artists </h3>
+            <p> the application lists 50 of your most played songs and artists during a specified time period. </p>
           </div>
           <div className="button-container">
             <div className="button red-button">

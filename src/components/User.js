@@ -36,19 +36,28 @@ class App extends Component {
         this.setState({
           user: {
             name: data.display_name,
-            userID: data.id
+            userID: data.id,
+            userIMG: data.images
           }
         })
       );
 
-    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
+      fetch("https://api.spotify.com/v1/me", {
+        headers: { Authorization: "Bearer " + accessToken }
+        // which returns a response as a promise
+      })
+        .then(response => response.json())
+        .then(data => console.log(data)
+        );
+
+    fetch("https://api.spotify.com/v1/me/player/recently-played?limit=4", {
       headers: { Authorization: "Bearer " + accessToken }
       // which returns a response as a promise
     })
       .then(response => response.json())
-      .then(data =>
+      .then(recentlyPlayedSongs =>
         this.setState({
-          recentlyPlayed: data
+          recentlyPlayed: recentlyPlayedSongs
         })
       );
 
@@ -103,8 +112,7 @@ class App extends Component {
               <i className="fa fa-pencil playlist-symbol" />
               <h3>name your playlist</h3>
               <p>
-                name your playlist to what you want. preferably something so you
-                remeber what your playlist contains. for example - "top tracks
+                name your playlist to what you want. preferably something that reminds you of what the playlist contains. for example - "top tracks
                 of june 2018", or "my all time tracks".
               </p>
             </div>
@@ -113,9 +121,8 @@ class App extends Component {
               <h3>choose your time range</h3>
               <p>
                 choose the period of time you want the playlist to collect your
-                top songs from. you have three options, all time which gathers
-                your most listened to music. period. or you can choose half year
-                or the last month.
+                top songs from. you have three options, all time, the past six months or the songs that you currently love which gathers songs from the last month.
+               
               </p>
             </div>
             <div className="playlistrenderer-info-box">

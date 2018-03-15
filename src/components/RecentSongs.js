@@ -5,7 +5,7 @@ import "font-awesome/css/font-awesome.min.css";
 const recentSongs = props => {
   const recentlyPlayed =
     props.recentSongs.items &&
-    props.recentSongs.items.slice(0, 4).map(function(item) {
+    props.recentSongs.items.map(function(item) {
       return (
         <div
           id="lala"
