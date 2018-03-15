@@ -1077,18 +1077,23 @@ img.profile-pic {
   }
   .img-holder-right,
   .img-holder-left {
-    max-height: 400px;
+    max-height: 350px;
   }
 
   .img-holder-right img,
   .img-holder-left img {
-    height: 414px;
+    height: 350px;
   }
 
   h4 {
     letter-spacing: 3px;
-    font-size: 88px;
+    font-size: 80px;
   }
+
+  .fp-text h3 {
+    font-size: 38px;
+    line-height: 45px;
+}
 
   .artist-small-background .songs-small-background {
     width: 350px;
@@ -1134,7 +1139,11 @@ img.profile-pic {
     margin-left: 10px;
   }
   .other-popular-text {
-    left: 36%;
+    left: 40%;
+  }
+
+  .button {
+    left: 47%;
   }
 
   .user {
@@ -1153,7 +1162,8 @@ img.profile-pic {
   }
 
   h2.animate-bottom {
-    display: none;
+    font-size: 15px !important; 
+    margin-top: 0;
   }
 
   .button a {
@@ -1161,14 +1171,14 @@ img.profile-pic {
   }
 
   .hero-text {
-    top: 40%;
+    top: 36%;
   }
 
   .hero-text h1,
   .hero-text h2,
   h3 {
-    font-size: 65px;
-    line-height: 75px;
+    font-size: 55px;
+    line-height: 65px;
   }
 
   .fp-text {
@@ -1176,14 +1186,11 @@ img.profile-pic {
     width: 95%;
   }
 
-  .fp-text h3 {
-    font-size: 59px;
-    line-height: 65px;
+  .fp-text p {
+    margin-top: 20px;
   }
 
-  .button {
-    left: 47%;
-  }
+
   .mostplayed-text {
     padding-top: 50px;
   }
