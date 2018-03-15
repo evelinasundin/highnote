@@ -1152,6 +1152,14 @@ img.profile-pic {
 
   .recentSongsContainer {
     min-height: 0;
+    height: 98vh;
+  }
+
+  .playlist-name-input {
+    width: 300px;
+    margin-right: 0px;
+    font-size: 17px;
+    text-align: center;
   }
 
   .artist-heading-container h2 {
@@ -1207,7 +1215,8 @@ img.profile-pic {
   }
 
   .hero-text {
-    top: 36%;
+    top: 44%;
+    width: 100%;
   }
 
   .hero-text h1,
