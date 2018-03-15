@@ -1146,6 +1146,42 @@ img.profile-pic {
     left: 47%;
   }
 
+  .recent-container img {
+    height: 79px;
+  }
+
+  .recentSongsContainer {
+    min-height: 0;
+  }
+
+  .artist-heading-container h2 {
+    font-size: 44px;
+}
+
+.artist-small-background {
+  width: 320px;
+}
+
+.songs-small-background {
+  width: 320px;
+}
+.create-playlist-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.allsongs-li-container {
+  width: 95%;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  max-width: 291px;
+}
+
+.playlistrender-container {
+  padding: 10px 10px;
+}
   .user {
     font-size: 14px;
     padding-right: 10px;
