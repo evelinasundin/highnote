@@ -939,14 +939,14 @@ p.home-connect:hover {
 }
 
 .profile-pic-container {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: right;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 img.profile-pic {
@@ -1093,7 +1093,7 @@ img.profile-pic {
   .fp-text h3 {
     font-size: 38px;
     line-height: 45px;
-}
+  }
 
   .artist-small-background .songs-small-background {
     width: 350px;
@@ -1146,6 +1146,10 @@ img.profile-pic {
     left: 47%;
   }
 
+  .allsongs-li-container {
+    max-width: none !important;
+  }
+
   .recent-container img {
     height: 79px;
   }
@@ -1164,32 +1168,32 @@ img.profile-pic {
 
   .artist-heading-container h2 {
     font-size: 44px;
-}
+  }
 
-.artist-small-background {
-  width: 320px;
-}
+  .artist-small-background {
+    width: 320px;
+  }
 
-.songs-small-background {
-  width: 320px;
-}
-.create-playlist-heading {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  .songs-small-background {
+    width: 320px;
+  }
+  .create-playlist-heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-.allsongs-li-container {
-  width: 95%;
-  overflow: hidden;
-  white-space: nowrap;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  max-width: 291px;
-}
+  .allsongs-li-container {
+    width: 95%;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    max-width: 291px;
+  }
 
-.playlistrender-container {
-  padding: 10px 10px;
-}
+  .playlistrender-container {
+    padding: 10px 10px;
+  }
   .user {
     font-size: 14px;
     padding-right: 10px;
@@ -1206,7 +1210,7 @@ img.profile-pic {
   }
 
   h2.animate-bottom {
-    font-size: 15px !important; 
+    font-size: 15px !important;
     margin-top: 0;
   }
 
@@ -1234,7 +1238,6 @@ img.profile-pic {
   .fp-text p {
     margin-top: 20px;
   }
-
 
   .mostplayed-text {
     padding-top: 50px;

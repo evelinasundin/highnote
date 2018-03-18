@@ -32,11 +32,11 @@ class PlaylistRenderer extends Component {
       // which returns a response as a promise
     })
       .then(response => response.json())
-      .then(data =>
+      .then(user =>
         this.setState({
           user: {
-            name: data.display_name,
-            userID: data.id
+            name: user.display_name,
+            userID: user.id
           }
         })
       );

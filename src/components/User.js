@@ -32,23 +32,15 @@ class App extends Component {
       // which returns a response as a promise
     })
       .then(response => response.json())
-      .then(data =>
+      .then(user =>
         this.setState({
           user: {
-            name: data.display_name,
-            userID: data.id,
-            userIMG: data.images
+            name: user.display_name,
+            userID: user.id,
+            userIMG: user.images
           }
         })
       );
-
-      fetch("https://api.spotify.com/v1/me", {
-        headers: { Authorization: "Bearer " + accessToken }
-        // which returns a response as a promise
-      })
-        .then(response => response.json())
-        .then(data => console.log(data)
-        );
 
     fetch("https://api.spotify.com/v1/me/player/recently-played?limit=4", {
       headers: { Authorization: "Bearer " + accessToken }
@@ -69,9 +61,9 @@ class App extends Component {
       }
     )
       .then(response => response.json())
-      .then(data =>
+      .then(topartists =>
         this.setState({
-          topArtists: data
+          topArtists: topartists
         })
       );
 
@@ -83,15 +75,14 @@ class App extends Component {
       }
     )
       .then(response => response.json())
-      .then(data =>
+      .then(topsongs =>
         this.setState({
-          topSongs: data
+          topSongs: topsongs
         })
       );
   }
 
   render() {
-    console.log(this.state.user);
 
     return (
       <div>

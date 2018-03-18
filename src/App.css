@@ -886,6 +886,8 @@ img.profile-pic {
     left: 40%; }
   .button {
     left: 47%; }
+  .allsongs-li-container {
+    max-width: none !important; }
   .recent-container img {
     height: 79px; }
   .recentSongsContainer {
